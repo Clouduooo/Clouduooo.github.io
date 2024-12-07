@@ -152,142 +152,221 @@
         }
       }
       detectApple()
-    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/Clouduo.PNG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 大佬传送门</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/GuraYuriCamp.gif')"><nav id="nav"><span id="blog-info"><a href="/" title="Clouduoの博客"><span class="site-name">Clouduoの博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 大佬传送门</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CS61C-笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-18T16:00:00.000Z" title="发表于 2024-09-19 00:00:00">2024-09-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-19T04:09:51.270Z" title="更新于 2024-09-19 12:09:51">2024-09-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="CS61C-笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="1-数的表示与转换"><a href="#1-数的表示与转换" class="headerlink" title="1. 数的表示与转换"></a>1. 数的表示与转换</h1><p>ob 二进制<br>0x 十六进制</p>
-<h4 id="二进制位扩展："><a href="#二进制位扩展：" class="headerlink" title="二进制位扩展："></a>二进制位扩展：</h4><p>无符号：直接给高位补0<br>有符号（反码，补码）：高位全部用符号位数字填充<br>eg. 0b11 = 0b1111,     0b01 = 0b0000001</p>
-<h4 id="进制转换："><a href="#进制转换：" class="headerlink" title="进制转换："></a>进制转换：</h4><p>分组法：<br><strong>二进制转十六进制</strong>：四个为一组，十六进制中一位代表16个数，而二进制中表示16个数需要四个位，故四个位分为一组。其他进制同理<br><strong>十六转二进制</strong>：将每一个数用四位二进制数表示，最后拼接起来</p>
-<h4 id="二进制中正负转换的Tricks："><a href="#二进制中正负转换的Tricks：" class="headerlink" title="二进制中正负转换的Tricks："></a>二进制中正负转换的Tricks：</h4><p>补码下 全为1 值为-1<br>得到一个正数的负数表示，所有位取反，最后加上1即可</p>
-<h4 id="补码加减法中的溢出问题：同符号相加减会可能会溢出（与无符号一样），异号相加减一定不会溢出！"><a href="#补码加减法中的溢出问题：同符号相加减会可能会溢出（与无符号一样），异号相加减一定不会溢出！" class="headerlink" title="补码加减法中的溢出问题：同符号相加减会可能会溢出（与无符号一样），异号相加减一定不会溢出！"></a>补码加减法中的溢出问题：同符号相加减会可能会溢出（与无符号一样），异号相加减一定不会溢出！</h4><img src="/2024/09/19/CS61C/image-20240709201124801.png" class="" title="image-20240709201124801">
-
-<p>偏移量：在无符号二进制基础上，加上偏移量，使得不会出现正数上涨回到0的情况。<br>一般bias 取 -(2^n-1^-1),n为你的二进制数所包含的的位数<br>如你的二进制表示范围为00000~11111，此时所有数都按无符号来表示，在此基础上加上bias就是实际量<br>则 00000就是最小的负数，11111就是最大的正数，且不会加回到负数上</p>
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/Clouduo.PNG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 大佬传送门</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/GuraYuriCamp.gif')"><nav id="nav"><span id="blog-info"><a href="/" title="Clouduoの博客"><span class="site-name">Clouduoの博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 大佬传送门</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CS61C-笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-18T16:00:00.000Z" title="发表于 2024-09-19 00:00:00">2024-09-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-19T04:09:51.270Z" title="更新于 2024-09-19 12:09:51">2024-09-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="CS61C-笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>1. 数的表示与转换</h1>
+<p>ob 二进制<br>
+0x 十六进制</p>
+<h4 id="二进制位扩展：">二进制位扩展：</h4>
+<p>无符号：直接给高位补0<br>
+有符号（反码，补码）：高位全部用符号位数字填充<br>
+eg. 0b11 = 0b1111, 	0b01 = 0b0000001</p>
+<h4 id="进制转换：">进制转换：</h4>
+<p>分组法：<br>
+<strong>二进制转十六进制</strong>：四个为一组，十六进制中一位代表16个数，而二进制中表示16个数需要四个位，故四个位分为一组。其他进制同理<br>
+<strong>十六转二进制</strong>：将每一个数用四位二进制数表示，最后拼接起来</p>
+<h4 id="二进制中正负转换的Tricks：">二进制中正负转换的Tricks：</h4>
+<p>补码下 全为1 值为-1<br>
+得到一个正数的负数表示，所有位取反，最后加上1即可</p>
+<h4 id="补码加减法中的溢出问题：同符号相加减会可能会溢出（与无符号一样），异号相加减一定不会溢出！">补码加减法中的溢出问题：同符号相加减会可能会溢出（与无符号一样），异号相加减一定不会溢出！</h4>
+<img src="/2024/09/19/CS61C/image-20240709201124801.png" class="" title="image-20240709201124801">
+<p>偏移量：在无符号二进制基础上，加上偏移量，使得不会出现正数上涨回到0的情况。<br>
+一般bias 取 -(2^n-1^-1),n为你的二进制数所包含的的位数<br>
+如你的二进制表示范围为00000~11111，此时所有数都按无符号来表示，在此基础上加上bias就是实际量<br>
+则 00000就是最小的负数，11111就是最大的正数，且不会加回到负数上</p>
 <p>偏移量法和补码都是很好的表示正负数的方法，各有优劣！</p>
-<h1 id="2-C基础"><a href="#2-C基础" class="headerlink" title="2. C基础"></a>2. C基础</h1><p>编译器：将代码直接针对对应架构的计算机进行编译，编译后的文件不具备可移植性<br>解释器：将机器无关的字节码解释成对应硬件架构的机器码</p>
-<h4 id="C的编译过程："><a href="#C的编译过程：" class="headerlink" title="C的编译过程："></a>C的编译过程：</h4><p>main.c  (compiler)-&gt;  main.o(汇编语言)  (linker)-&gt;  可执行文件exe</p>
+<h1>2. C基础</h1>
+<p>编译器：将代码直接针对对应架构的计算机进行编译，编译后的文件不具备可移植性<br>
+解释器：将机器无关的字节码解释成对应硬件架构的机器码</p>
+<h4 id="C的编译过程：">C的编译过程：</h4>
+<p>main.c  (compiler)-&gt;  main.o(汇编语言)  (linker)-&gt;  可执行文件exe</p>
 <p>详细过程：</p>
 <ol>
-<li><p>C 预处理器 (C Pre-Processor)——处理预处理指令#<br>main.c  (C Pre-Processor)-&gt;  main.i</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">   gcc -E main.c -o main.i</span><br><span class="line"></span><br><span class="line">2. 编译器 (Compiler)——将预处理后的文件 `main.i` 编译成汇编语言代码文件 main.s,这个阶段会进行语法分析、语义分析和优化</span><br><span class="line"></span><br><span class="line">   main.i -&gt; main.s</span><br><span class="line"></span><br><span class="line">   ~~~shell</span><br><span class="line">   gcc -S main.i -o main.s</span><br><span class="line"></span><br><span class="line">3. 汇编器 (Assembler)——将汇编代码文件 `main.s` 转换成目标代码文件 `main.o`，即机器码。</span><br><span class="line"></span><br><span class="line">   ~~~shell</span><br><span class="line">   gcc -c main.s -o main.o</span><br></pre></td></tr></table></figure></li>
-<li><p>链接器 (Linker)——</p>
+<li>
+<p>C 预处理器 (C Pre-Processor)——处理预处理指令#<br>
+main.c  (C Pre-Processor)-&gt;  main.i</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">   gcc -E main.c -o main.i</span><br><span class="line"></span><br><span class="line">2. 编译器 (Compiler)——将预处理后的文件 `main.i` 编译成汇编语言代码文件 main.s,这个阶段会进行语法分析、语义分析和优化</span><br><span class="line"></span><br><span class="line">   main.i -&gt; main.s</span><br><span class="line"></span><br><span class="line">   ~~~shell</span><br><span class="line">   gcc -S main.i -o main.s</span><br><span class="line"></span><br><span class="line">3. 汇编器 (Assembler)——将汇编代码文件 `main.s` 转换成目标代码文件 `main.o`，即机器码。</span><br><span class="line"></span><br><span class="line">   ~~~shell</span><br><span class="line">   gcc -c main.s -o main.o</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>链接器 (Linker)——</p>
 <p>将多个目标文件（如果有）和库文件链接成最终的可执行文件 <code>main.exe</code> 或其他操作系统下的可执行文件格式。</p>
 <p>处理外部符号引用，链接库文件（例如标准库 libc 等）</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">gcc main.o -o main.exe</span><br></pre></td></tr></table></figure></li>
-<li><p>加载器（Loader）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">gcc main.o -o main.exe</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>加载器（Loader）</p>
 </li>
 </ol>
-<h1 id="3-C指针，数组，Strings"><a href="#3-C指针，数组，Strings" class="headerlink" title="3. C指针，数组，Strings"></a>3. C指针，数组，Strings</h1><p>C小贴士：变量声明不初始化，内部存放的是未知数据<br>void* 万能指针：可以指向任意类型的东西<br>函数指针：int (<em>temp) (void/</em>, void/*);  声明一个参数类型为void *， void * ，返回值为int的函数指针变量temp</p>
-<p>地址空间大小：32-bit机器——地址空间是32bit，可以最多一次访问0~2^32^ - 1 不同内存点，数据通道几乎总是以32位方式传输<br>字对齐：向0内存点对齐，比如32位int变量的内存地址开头必须为0，4，8，C，0……</p>
+<h1>3. C指针，数组，Strings</h1>
+<p>C小贴士：变量声明不初始化，内部存放的是未知数据<br>
+void* 万能指针：可以指向任意类型的东西<br>
+函数指针：int (<em>temp) (void/</em>, void/*);  声明一个参数类型为void *， void * ，返回值为int的函数指针变量temp</p>
+<p>地址空间大小：32-bit机器——地址空间是32bit，可以最多一次访问0~2^32^ - 1 不同内存点，数据通道几乎总是以32位方式传输<br>
+字对齐：向0内存点对齐，比如32位int变量的内存地址开头必须为0，4，8，C，0…</p>
 <p>数组与指向数组存储元素类型的指针的区别：一般来说没有区别</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span>* pointer == <span class="type">char</span> pointer[]</span><br></pre></td></tr></table></figure>
-
-<p>但是<strong>指针可以++，而数组不可以</strong>！<br><strong>数组指针运算：</strong></p>
+<p>但是<strong>指针可以++，而数组不可以</strong>！<br>
+<strong>数组指针运算：</strong></p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">ar[<span class="number">0</span>] == *ar;	ar[<span class="number">2</span>] == *(ar + <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-
-<p>Segmentation faults 段错误——读写无法访问的内存<br>bus errors 总线错误——读到一个字不对齐的变量内存</p>
+<p>Segmentation faults 段错误——读写无法访问的内存<br>
+bus errors 总线错误——读到一个字不对齐的变量内存</p>
 <p>使用句柄来修改指针——句柄：**ptr 指向指针的指针</p>
-<h1 id="4-C内存管理"><a href="#4-C内存管理" class="headerlink" title="4. C内存管理"></a>4. C内存管理</h1><p>malloc和free相伴而行，但注意，free中传入的指针只能是指向malloc返回的地址的指针！<br>注意，malloc返回null代表分配内存失败<br>对malloc的内存空间重新分配内存的是realloc，传入malloc返回的地址的指针<br><strong>注意：realloc可能会移动数据位置</strong></p>
+<h1>4. C内存管理</h1>
+<p>malloc和free相伴而行，但注意，free中传入的指针只能是指向malloc返回的地址的指针！<br>
+注意，malloc返回null代表分配内存失败<br>
+对malloc的内存空间重新分配内存的是realloc，传入malloc返回的地址的指针<br>
+<strong>注意：realloc可能会移动数据位置</strong></p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> *ip = (<span class="type">int</span> *) <span class="built_in">malloc</span>(<span class="number">10</span> * <span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line"><span class="keyword">if</span> (ip == <span class="literal">NULL</span>)	...Do()....  /Do something to deal with it</span><br><span class="line">ip = (<span class="type">int</span>*) <span class="built_in">realloc</span>(ip, <span class="number">20</span> * <span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br></pre></td></tr></table></figure>
-
-<p><strong>An array name is not a variable 数组名不是一个变量</strong><br>strlen()函数会找出char*字符串的长度，但是不包括NULL终止符，因此分配空间时应该：</p>
+<p><strong>An array name is not a variable 数组名不是一个变量</strong><br>
+strlen()函数会找出char*字符串的长度，但是不包括NULL终止符，因此分配空间时应该：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span>* <span class="built_in">string</span> = .....;</span><br><span class="line"><span class="type">char</span>* ptr = (<span class="type">char</span>*) <span class="built_in">malloc</span>(<span class="built_in">strlen</span>(<span class="built_in">string</span>) + <span class="number">1</span>);</span><br><span class="line"><span class="built_in">strcpy</span>(ptr, <span class="built_in">string</span>);</span><br></pre></td></tr></table></figure>
-
-<h4 id="C的三个内存区域："><a href="#C的三个内存区域：" class="headerlink" title="C的三个内存区域："></a>C的三个内存区域：</h4><p>静态存储区：存储全局变量，大小无法被改变，但是可以读写<br>栈：存储局部变量，参数，返回地址。会向下增长<br>堆：存储诸如malloc分配的动态内存空间。会向上增长</p>
+<h4 id="C的三个内存区域：">C的三个内存区域：</h4>
+<p>静态存储区：存储全局变量，大小无法被改变，但是可以读写<br>
+栈：存储局部变量，参数，返回地址。会向下增长<br>
+堆：存储诸如malloc分配的动态内存空间。会向上增长</p>
 <img src="/2024/09/19/CS61C/image-20240715210255300.png" class="" title="image-20240715210255300">
-
 <p><strong>神奇的是，栈空间拓展和释放仅仅是移动栈指针向下向上，释放时向上移动指针而并没有执行清理释放区域中的内存</strong></p>
-<h4 id="内存块的结构和malloc分配："><a href="#内存块的结构和malloc分配：" class="headerlink" title="内存块的结构和malloc分配："></a>内存块的结构和malloc分配：</h4><p>一个内存块有一个header，存储该内存块的大小，以及指向下一个内存块的指针。整个内存空间类似一个由一个个内存块结点组成的循环链表！</p>
-<p>三种处理malloc()分配空间的方式：<br>     1. Best Fit 最佳适配：搜索所有堆内存块找到最适合你malloc申请大小的那块给你。<br>     2. First Fit 首次适配：每次都从头开始，找到首个大于等于你malloc请求的空间大小的块给你。<br>     3. Next Fit 下次适配：从上次分配给你的块的位置继续，找到首个大于等于你m·alloc请求空间大小的块给你。</p>
+<h4 id="内存块的结构和malloc分配：">内存块的结构和malloc分配：</h4>
+<p>一个内存块有一个header，存储该内存块的大小，以及指向下一个内存块的指针。整个内存空间类似一个由一个个内存块结点组成的循环链表！</p>
+<p>三种处理malloc()分配空间的方式：<br>
+1. Best Fit 最佳适配：搜索所有堆内存块找到最适合你malloc申请大小的那块给你。<br>
+2. First Fit 首次适配：每次都从头开始，找到首个大于等于你malloc请求的空间大小的块给你。<br>
+3. Next Fit 下次适配：从上次分配给你的块的位置继续，找到首个大于等于你m·alloc请求空间大小的块给你。</p>
 <p><strong>被释放的空间是不应该被访问的！下图以被释放的栈空间为例</strong></p>
 <img src="/2024/09/19/CS61C/image-20240715213156559.png" class="" title="image-20240715213156559">
-
 <p><strong>free的不慎使用会导致释放错误的内存空间</strong></p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">foo</span>* <span class="title">f</span> =</span> <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> foo) * <span class="number">10</span>);</span><br><span class="line">f++;</span><br><span class="line"><span class="built_in">free</span>(f);</span><br><span class="line"><span class="comment">// 没人知道free这时候会做什么！因为free只会跟踪malloc返回的内存地址，然后正确释放这一大块空间！</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="5-Floating-Point-浮点数"><a href="#5-Floating-Point-浮点数" class="headerlink" title="5. Floating Point 浮点数"></a>5. Floating Point 浮点数</h1><h4 id="Fixing-Point固定二进制小数点数"><a href="#Fixing-Point固定二进制小数点数" class="headerlink" title="Fixing Point固定二进制小数点数"></a>Fixing Point固定二进制小数点数</h4><p>小数点左边为2^0^, 2^1^, 2^2^ 小数点右边的数位代表2^-1^, 2^-2^等等，但是小数点固定在一个位置，比如左向右数第二位上。<br>    除法左移——例如 11 1111 == 63<br>    我对64 / 16， 就得到： 11.1111 == 64/16, 左移小数点四位</p>
-<h4 id="Floating-Point浮点数"><a href="#Floating-Point浮点数" class="headerlink" title="Floating Point浮点数"></a>Floating Point浮点数</h4><p>思路：对一个二进制数，找出其中的<strong>尾数mantissa</strong>（左右边界都是1，边界外面都是0），作为第一参数<br>           小数点距离尾数左边界的位数——<strong>指数exponent</strong>，作为第二参数。<br>如16.375 == 10000.011，转化为规范化二进制为：1.0000011 x 2^4^,有效值10000011，指数为4，代表小数点在1.0这一位的基础上，向右移动4位。如同十进制中的科学计数一样，我们默认1.xxxx这个1一直存在，故只需记录最左边1的右边的有效数字0000011，这里的数字我们成为**有效位(Significand)**。<br>这便是浮点的由来</p>
+<h1>5. Floating Point 浮点数</h1>
+<h4 id="Fixing-Point固定二进制小数点数">Fixing Point固定二进制小数点数</h4>
+<p>小数点左边为2^0^, 2^1^, 2^2^ 小数点右边的数位代表2^-1^, 2^-2^等等，但是小数点固定在一个位置，比如左向右数第二位上。<br>
+除法左移——例如 11 1111 == 63<br>
+我对64 / 16， 就得到： 11.1111 == 64/16, 左移小数点四位</p>
+<h4 id="Floating-Point浮点数">Floating Point浮点数</h4>
+<p>思路：对一个二进制数，找出其中的<strong>尾数mantissa</strong>（左右边界都是1，边界外面都是0），作为第一参数<br>
+小数点距离尾数左边界的位数——<strong>指数exponent</strong>，作为第二参数。<br>
+如16.375 == 10000.011，转化为规范化二进制为：1.0000011 x 2^4^,有效值10000011，指数为4，代表小数点在1.0这一位的基础上，向右移动4位。如同十进制中的科学计数一样，我们默认1.xxxx这个1一直存在，故只需记录最左边1的右边的有效数字0000011，这里的数字我们成为<strong>有效位(Significand)</strong>。<br>
+这便是浮点的由来</p>
 <p><strong>浮点数的大致形式（IEEE floating point）：</strong></p>
 <img src="/2024/09/19/CS61C/image-20240717193624885.png" class="" title="image-20240717193624885">
-
 <img src="/2024/09/19/CS61C/image-20240717194146256.png" class="" title="image-20240717194146256">
-
-<p>Underflow：无限接近0<br>Overflow：溢出最大最小表示范围</p>
-<p>float：1符号位，8指数位，23有效值存储位<br>double：1符号位，11指数位，52有效值存储位</p>
-<p>float和double中的0：<br>    符号位为1或0，表示-0和+0，指数全为0，有效值也全为0</p>
-<p><strong>浮点数的正式形式(IEEE 754浮点标准)：</strong>使用了之前bias偏移量的思路</p>
+<p>Underflow：无限接近0<br>
+Overflow：溢出最大最小表示范围</p>
+<p>float：1符号位，8指数位，23有效值存储位<br>
+double：1符号位，11指数位，52有效值存储位</p>
+<p>float和double中的0：<br>
+符号位为1或0，表示-0和+0，指数全为0，有效值也全为0</p>
+<p>**浮点数的正式形式(IEEE 754浮点标准)：**使用了之前bias偏移量的思路</p>
 <img src="/2024/09/19/CS61C/image-20240717203657598.png" class="" title="image-20240717203657598">
-
-<p>-1^符号位的值^ x 0b(1.000… + 0.有效位) x 2^(指数位值-127)        注意：【这里的加号是类似字符串拼接的加】<br>127是2^n-1^-1 得到的<br><strong>通过偏移量方式，我们得以用字面上的正的指数值，来表示偏移后实际上负和正的指数值，使得小数点可以在1.xxx的基础上实现左移和右移，完善了浮点数的表示</strong></p>
-<h4 id="特殊数字"><a href="#特殊数字" class="headerlink" title="特殊数字"></a>特殊数字</h4><blockquote>
-<p>指数全为0，有效位全为0，表示0<br>        ||<br>指数全为0，有效位非全0，（此时认为尾数第一位变成0，也就是0.xxxx形式）表示最小规格数字范围——最小值为-1^0^ x 2^-22^ x 2^-127^ = 2^-149^<br>        ||<br>指数非全1，有效位非全0，表示浮点数<br>      ||<br>指数全为1，有效位全为0，表示∞<br>        ||<br>指数全为1，有效位非全0，表示NaN——Not a Number——由于有效位可以有各种取值，每一个NaN值可以广泛应用于编码各种实际中的错误信息</p>
+<p>-1^符号位的值^ x 0b(1.000… + 0.有效位) x 2^(指数位值-127)		注意：【这里的加号是类似字符串拼接的加】<br>
+127是2^n-1^-1 得到的<br>
+<strong>通过偏移量方式，我们得以用字面上的正的指数值，来表示偏移后实际上负和正的指数值，使得小数点可以在1.xxx的基础上实现左移和右移，完善了浮点数的表示</strong></p>
+<h4 id="特殊数字">特殊数字</h4>
+<blockquote>
+<p>指数全为0，有效位全为0，表示0<br>
+||<br>
+指数全为0，有效位非全0，（此时认为尾数第一位变成0，也就是0.xxxx形式）表示最小规格数字范围——最小值为-1^0^ x 2^-22^ x 2^-127^ = 2^-149^<br>
+||<br>
+指数非全1，有效位非全0，表示浮点数<br>
+||<br>
+指数全为1，有效位全为0，表示∞<br>
+||<br>
+指数全为1，有效位非全0，表示NaN——Not a Number——由于有效位可以有各种取值，每一个NaN值可以广泛应用于编码各种实际中的错误信息</p>
 </blockquote>
 <p><strong>浮点数转为十进制数示例：</strong></p>
 <img src="/2024/09/19/CS61C/image-20240718124500139.png" class="" title="image-20240718124500139">
-
 <p><strong><em>普通浮点数</em>：1/3</strong></p>
 <img src="/2024/09/19/CS61C/image-20240718133503018.png" class="" title="image-20240718133503018">
-
 <p><strong>浮点数加法不满足结合律</strong></p>
 <img src="/2024/09/19/CS61C/image-20240718134625534.png" class="" title="image-20240718134625534">
-
-<h4 id="舍入"><a href="#舍入" class="headerlink" title="舍入"></a>舍入</h4><p>满足四舍五入规则。<br>当数字正好位于中间——如十进制中2.5时，舍入最近的偶数，即2，而非3<br>二进制也遵循一样的规则<br>0101 ‘100’  引号内部的数我们需要舍入，由二进制特性，显而易见100是000~111的中间数，也就类似于上面2.5的中间情况，因此0101100应该舍入到最近的偶数，也就是0110 ‘000’<br>同理：0100 ‘100’ –&gt; 0100 ‘000’</p>
-<h1 id="6-RISC-V-简介"><a href="#6-RISC-V-简介" class="headerlink" title="6. RISC-V 简介"></a>6. RISC-V 简介</h1><p>指令集：一种特定体系结构可以执行的指令集合——由汇编语言表示<br>指令集架构：适用于某一或一类处理器的特定指令集<br>历史：简单，数量少的指令集架构设计哲学被广泛认可</p>
-<h4 id="寄存器Register——位于处理器内核中的硬件对象，数量有限。对数据的操作是在寄存器的数据上进行的"><a href="#寄存器Register——位于处理器内核中的硬件对象，数量有限。对数据的操作是在寄存器的数据上进行的" class="headerlink" title="寄存器Register——位于处理器内核中的硬件对象，数量有限。对数据的操作是在寄存器的数据上进行的"></a>寄存器Register——位于处理器内核中的硬件对象，数量有限。对数据的操作是在寄存器的数据上进行的</h4><p>x86指令集架构——8个寄存器；<br>RISC-V指令集架构——32个寄存器<br><strong>字word</strong>——与指令集架构的变种有关。如RV32架构，一个字word对应32bit，4byte<br><strong>RISC-V的字word长也为32bit</strong></p>
-<p>RISC-V寄存器<br>32个寄存器编号x0~x31<br><strong><em>x0是特殊的寄存器，永远存有数据0</em>——无论你对x0寄存器做什么操作，其永远都为0</strong></p>
-<p>汇编：<br>每一行汇编语言最多包含一条指令</p>
+<h4 id="舍入">舍入</h4>
+<p>满足四舍五入规则。<br>
+当数字正好位于中间——如十进制中2.5时，舍入最近的偶数，即2，而非3<br>
+二进制也遵循一样的规则<br>
+0101 ‘100’  引号内部的数我们需要舍入，由二进制特性，显而易见100是000~111的中间数，也就类似于上面2.5的中间情况，因此0101100应该舍入到最近的偶数，也就是0110 ‘000’<br>
+同理：0100 ‘100’ --&gt; 0100 ‘000’</p>
+<h1>6. RISC-V 简介</h1>
+<p>指令集：一种特定体系结构可以执行的指令集合——由汇编语言表示<br>
+指令集架构：适用于某一或一类处理器的特定指令集<br>
+历史：简单，数量少的指令集架构设计哲学被广泛认可</p>
+<h4 id="寄存器Register——位于处理器内核中的硬件对象，数量有限。对数据的操作是在寄存器的数据上进行的">寄存器Register——位于处理器内核中的硬件对象，数量有限。对数据的操作是在寄存器的数据上进行的</h4>
+<p>x86指令集架构——8个寄存器；<br>
+RISC-V指令集架构——32个寄存器<br>
+<strong>字word</strong>——与指令集架构的变种有关。如RV32架构，一个字word对应32bit，4byte<br>
+<strong>RISC-V的字word长也为32bit</strong></p>
+<p>RISC-V寄存器<br>
+32个寄存器编号x0~x31<br>
+<strong><em>x0是特殊的寄存器，永远存有数据0</em>——无论你对x0寄存器做什么操作，其永远都为0</strong></p>
+<p>汇编：<br>
+每一行汇编语言最多包含一条指令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">add x1, x2, x3</span><br><span class="line"># 1. add 操作的名称</span><br><span class="line"># 2. x1  存储操作结果的寄存器</span><br><span class="line"># 3. x2  操作所使用的数据取自源寄存器1</span><br><span class="line"># 4. x3  操作所使用的数据取自源寄存器2</span><br></pre></td></tr></table></figure>
-
 <p>执行C中代码如：a = b + c + d - e</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">add x10, x1, x2		# a_temp = b + c</span><br><span class="line">add x10, x10, x3	# a_temp = a_temp + d</span><br><span class="line">sub x10, x10, x4	# a = a_temp - e</span><br></pre></td></tr></table></figure>
-
-<p><strong>立即数immediates</strong>——汇编中的数值常量<br>RISC-V用于加立即数的指令是 addi ——add immediate</p>
+<p><strong>立即数immediates</strong>——汇编中的数值常量<br>
+RISC-V用于加立即数的指令是 addi ——add immediate</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">addi x3, x4, 10</span><br></pre></td></tr></table></figure>
-
 <p>寄存器足迹——特定内核使用的寄存器数量</p>
-<h4 id="小端序——RISC-V遵循的字节序"><a href="#小端序——RISC-V遵循的字节序" class="headerlink" title="小端序——RISC-V遵循的字节序"></a>小端序——RISC-V遵循的字节序</h4><p>一个字word中最低位的有效字节byte，获取该字中的最低的地址，该最低地址也成为字word的地址</p>
+<h4 id="小端序——RISC-V遵循的字节序">小端序——RISC-V遵循的字节序</h4>
+<p>一个字word中最低位的有效字节byte，获取该字中的最低的地址，该最低地址也成为字word的地址</p>
 <p>注意：字节序只是影响字节在内存中的存储顺序，而bit的存储一直都是低位在一个字节的低处（最右边）</p>
-<p>例如：存储一个十进制数1025<br>1025 = 00000000 00000000 00000100 00000001  对应四个字节<br>如果采用小端序，内存为空，则字节00000001 放在内存地址为0处，00000100 放在内存地址为1处 以此类推…<br>如果采用大端序，内存为空，则字节00000000 放在内存地址为0处，00000000 放在内存地址为1处 以此类推…</p>
-<h1 id="7-RISC-V-lw-sw-Decisions-I"><a href="#7-RISC-V-lw-sw-Decisions-I" class="headerlink" title="7. RISC-V: lw, sw, Decisions I"></a>7. RISC-V: lw, sw, Decisions I</h1><h4 id="寄存器vs内存"><a href="#寄存器vs内存" class="headerlink" title="寄存器vs内存"></a>寄存器vs内存</h4><p>寄存器：32个，每个寄存器的大小为一个字word，所以总共32*32=1024bit，128bytes<br>内存（DRAM）：非常非常多，一般笔记本是2~64GB的内存</p>
-<p>寄存器速度 <del>= 50</del>500 * 内存速度</p>
-<p><strong>从内存加载数据到寄存器——Load Word</strong><br><strong>Store Word和Load Word的偏移量必须是4的倍数，因为一个word是四个Byte！！！</strong></p>
+<p>例如：存储一个十进制数1025<br>
+1025 = 00000000 00000000 00000100 00000001  对应四个字节<br>
+如果采用小端序，内存为空，则字节00000001 放在内存地址为0处，00000100 放在内存地址为1处 以此类推…<br>
+如果采用大端序，内存为空，则字节00000000 放在内存地址为0处，00000000 放在内存地址为1处 以此类推…</p>
+<h1>7. RISC-V: lw, sw, Decisions I</h1>
+<h4 id="寄存器vs内存">寄存器vs内存</h4>
+<p>寄存器：32个，每个寄存器的大小为一个字word，所以总共32*32=1024bit，128bytes<br>
+内存（DRAM）：非常非常多，一般笔记本是2~64GB的内存</p>
+<p>寄存器速度 ~= 50~500 * 内存速度</p>
+<p><strong>从内存加载数据到寄存器——Load Word</strong><br>
+<strong>Store Word和Load Word的偏移量必须是4的倍数，因为一个word是四个Byte！！！</strong></p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// C Code</span></span><br><span class="line"><span class="type">int</span> A[<span class="number">100</span>]; <span class="type">int</span> h = <span class="number">12</span>;</span><br><span class="line"><span class="type">int</span> g = h + A[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lw x10, 12(x15)	  # 寄存器x10获得了内存中A[3]的值</span><br><span class="line">add x11, x12, x10 # g = h + A[3]</span><br><span class="line"># Note x15——指向A[0]的基指针， 12——偏移12bytes，即三个int值</span><br></pre></td></tr></table></figure>
-
 <p><strong>从寄存器存储数据到内存——Store Word</strong></p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> A[<span class="number">100</span>];</span><br><span class="line">A[<span class="number">10</span>] = h + A[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lw x10, 12(x15)   # 获取A[3]值</span><br><span class="line">add x10, x12, x10 # h + A[3]</span><br><span class="line">sw x10, 40(x15)	  # A[10] = h + A[3]</span><br></pre></td></tr></table></figure>
-
-<p><strong>允许以更小的单位进行偏移的语法——Store Bye，Load Byte</strong><br><strong>sb和lb，偏移量允许是byte的任意整数倍，可以运输诸如颜色值这样的一字节长度数据</strong></p>
-<p><strong>符号扩展：将有效最高位符号位复制到剩余高位字节中为0的位</strong><br><strong>无符号扩展：lbu指令Load Unsigned Byte，只是简单把字节复制过来，高位以0填充</strong></p>
-<h4 id="计算机决策的实现——分支指令"><a href="#计算机决策的实现——分支指令" class="headerlink" title="计算机决策的实现——分支指令"></a>计算机决策的实现——分支指令</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 有条件分支指令</span><br><span class="line">beq reg1, reg2, L1</span><br><span class="line"># if(reg1的值) == reg2的值，goto L1标签的位置执行代码</span><br><span class="line"># else 继续执行下一行</span><br><span class="line"># beq——branch if equal</span><br><span class="line"># bne——branch if not equal</span><br><span class="line"># blt——branch if less than</span><br><span class="line"># bge——branch if greater or equal than</span><br><span class="line"># bltu——branch if less than （unsigned）</span><br><span class="line"># bgeu——branch if greater or equal than （unsigned）</span><br><span class="line"></span><br><span class="line"># 无条件分指令</span><br><span class="line"># j label</span><br><span class="line"># j——jump，跳转至lable处。类似goto</span><br><span class="line"></span><br><span class="line">#注意：条件分支中不能与立即数进行比较，只能寄存器与寄存器进行比较</span><br></pre></td></tr></table></figure>
-
+<p><strong>允许以更小的单位进行偏移的语法——Store Bye，Load Byte</strong><br>
+<strong>sb和lb，偏移量允许是byte的任意整数倍，可以运输诸如颜色值这样的一字节长度数据</strong></p>
+<p><strong>符号扩展：将有效最高位符号位复制到剩余高位字节中为0的位</strong><br>
+<strong>无符号扩展：lbu指令Load Unsigned Byte，只是简单把字节复制过来，高位以0填充</strong></p>
+<h4 id="计算机决策的实现——分支指令">计算机决策的实现——分支指令</h4>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 有条件分支指令</span><br><span class="line">beq reg1, reg2, L1</span><br><span class="line"># if(reg1的值) == reg2的值，goto L1标签的位置执行代码</span><br><span class="line"># else 继续执行下一行</span><br><span class="line"># beq——branch if equal</span><br><span class="line"># bne——branch if not equal</span><br><span class="line"># blt——branch if less than</span><br><span class="line"># bge——branch if greater or equal than</span><br><span class="line"># bltu——branch if less than （unsigned）</span><br><span class="line"># bgeu——branch if greater or equal than （unsigned）</span><br><span class="line"></span><br><span class="line"># 无条件分指令</span><br><span class="line"># j label</span><br><span class="line"># j——jump，跳转至lable处。类似goto</span><br><span class="line"></span><br><span class="line">#注意：条件分支中不能与立即数进行比较，只能寄存器与寄存器进行比较</span><br></pre></td></tr></table></figure>
 <p>example：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// C Code</span></span><br><span class="line"><span class="type">int</span> A[<span class="number">20</span>];</span><br><span class="line"><span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; i++)</span><br><span class="line">    sum += A[i];</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># RISC-V Code</span><br><span class="line">add x9, x8, x0	# x9 = x8 = &amp;A[0]</span><br><span class="line">add x10, x0, x0 # int sum = 0</span><br><span class="line">add x11, x0, x0 # int i = 0</span><br><span class="line">addi x13, x0, 20# i_max = 20</span><br><span class="line">Loop:</span><br><span class="line">    bge x11, x13, Done</span><br><span class="line">    lw x12, 0(x9)	  # x12 = A[i]</span><br><span class="line">    add x10, x10, x12 # sum += A[i]</span><br><span class="line">    addi x9, x9, 4    # x9 = &amp;A[i+1]</span><br><span class="line">    addi x11, x11, 1  # i++</span><br><span class="line">    j Loop</span><br><span class="line">Done:</span><br></pre></td></tr></table></figure>
-
-<h1 id="8-RISC-V-Decisions-II"><a href="#8-RISC-V-Decisions-II" class="headerlink" title="8. RISC-V: Decisions II"></a>8. RISC-V: Decisions II</h1><h3 id="位运算的汇编"><a href="#位运算的汇编" class="headerlink" title="位运算的汇编"></a>位运算的汇编</h3><h4 id="位与"><a href="#位与" class="headerlink" title="位与"></a>位与</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Register</span><br><span class="line">and x5, x6, x7	# x5 = x6 &amp; x7</span><br><span class="line"># Immediate</span><br><span class="line">andi x5, x6, 3  # x5 = x6 &amp; 3</span><br></pre></td></tr></table></figure>
-
-<p><strong>位与用于Masking：</strong><br>andi 一个 0000 00FF，可以提取出最低的那个有效字节<br>andi 一个 FF00 0000，可以提取出最高的那个有效字节</p>
-<h4 id="位非"><a href="#位非" class="headerlink" title="位非"></a>位非</h4><p>没有该指令，但只需与全1的立即数进行XOR异或即可</p>
-<h4 id="位移"><a href="#位移" class="headerlink" title="位移"></a>位移</h4><p><strong>逻辑位移:</strong></p>
+<h1>8. RISC-V: Decisions II</h1>
+<h3 id="位运算的汇编">位运算的汇编</h3>
+<h4 id="位与">位与</h4>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Register</span><br><span class="line">and x5, x6, x7	# x5 = x6 &amp; x7</span><br><span class="line"># Immediate</span><br><span class="line">andi x5, x6, 3  # x5 = x6 &amp; 3</span><br></pre></td></tr></table></figure>
+<p><strong>位与用于Masking：</strong><br>
+andi 一个 0000 00FF，可以提取出最低的那个有效字节<br>
+andi 一个 FF00 0000，可以提取出最高的那个有效字节</p>
+<h4 id="位非">位非</h4>
+<p>没有该指令，但只需与全1的立即数进行XOR异或即可</p>
+<h4 id="位移">位移</h4>
+<p><strong>逻辑位移:</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 左移——sll：shift left logical</span><br><span class="line"># Register</span><br><span class="line">sll x11, x12, x13	# x11 = x12 &lt;&lt; x13</span><br><span class="line"># Immediate</span><br><span class="line">slli x11, x12, 2	# x11 = x12 &lt;&lt; 2</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 右移——srl：shift right logical</span><br><span class="line"># 与左移用法一样</span><br></pre></td></tr></table></figure>
-
 <p>逻辑位移的十进制意义：左移n位，相当于原十进制数乘以2^n^，右移是除以2^n^并取整</p>
-<p><strong>算术位移（只有算术右移）：</strong><br>一般有<strong>符号数</strong>的<strong>右移</strong>都是<strong>算术右移</strong>：用符号位的数值填充右移产生的空位<br><strong>算术右移的十进制意义：原十进制数除以2^n^并向0取整</strong><br>注意：C的算术右移要求：右移除法后，<strong>向0舍入取整</strong>！</p>
+<p><strong>算术位移（只有算术右移）：</strong><br>
+一般有<strong>符号数</strong>的<strong>右移</strong>都是<strong>算术右移</strong>：用符号位的数值填充右移产生的空位<br>
+<strong>算术右移的十进制意义：原十进制数除以2^n^并向0取整</strong><br>
+注意：C的算术右移要求：右移除法后，<strong>向0舍入取整</strong>！</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># sra——shift right arithmetic</span><br><span class="line"># srai——shift right arithmetic immediate</span><br><span class="line"># 用法见逻辑右移代码</span><br></pre></td></tr></table></figure>
-
-<h4 id="程序是如何存储和执行的"><a href="#程序是如何存储和执行的" class="headerlink" title="程序是如何存储和执行的"></a>程序是如何存储和执行的</h4><p>经过汇编器Assembler以后，生成.o文件，即机器码文件。由于这些文件太大，因此不会存在寄存器里，而是存储在内存中，存储.o的内存区域叫做Program区域。Program区域的数据其实就是一系列由字word宽度为单位的数据组成的RISC-V指令。</p>
+<h4 id="程序是如何存储和执行的">程序是如何存储和执行的</h4>
+<p>经过汇编器Assembler以后，生成.o文件，即机器码文件。由于这些文件太大，因此不会存在寄存器里，而是存储在内存中，存储.o的内存区域叫做Program区域。Program区域的数据其实就是一系列由字word宽度为单位的数据组成的RISC-V指令。</p>
 <img src="/2024/09/19/CS61C/image-20240719180030003.png" class="" title="image-20240719180030003">
-
-<p><strong>Program Counter</strong>——一个特殊的寄存器，位于处理器内部，存储着将要执行的下一条指令的字节地址<br>如果是顺序执行时，下一条指令的字节地址是当前指令地址加上一个字word（四个字节）</p>
-<h3 id="汇编中的一些语法上特性"><a href="#汇编中的一些语法上特性" class="headerlink" title="汇编中的一些语法上特性"></a>汇编中的一些语法上特性</h3><h4 id="符号寄存器名称Symbolic-Register-Names"><a href="#符号寄存器名称Symbolic-Register-Names" class="headerlink" title="符号寄存器名称Symbolic Register Names"></a>符号寄存器名称Symbolic Register Names</h4><figure class="highlight plaintext"><figcaption><span>--> a0~a7</span></figcaption><table><tr><td class="code"><pre><span class="line">x10~x17 --&gt; a0~a7  用于函数调用的参数寄存器</span><br><span class="line">x0      --&gt; zero   代表0</span><br></pre></td></tr></table></figure>
-
-<h4 id="伪指令Pseudo-instructions"><a href="#伪指令Pseudo-instructions" class="headerlink" title="伪指令Pseudo-instructions"></a>伪指令Pseudo-instructions</h4><p>一些指令用于简化常见的汇编操作（不需要使用基础指令做大量拼接，简化为一个伪指令，类似语法糖）<br>但实际上伪指令只是便于我们增加汇编代码可读性，底层会转变为对应的基础指令的组合<br>example：</p>
+<p><strong>Program Counter</strong>——一个特殊的寄存器，位于处理器内部，存储着将要执行的下一条指令的字节地址<br>
+如果是顺序执行时，下一条指令的字节地址是当前指令地址加上一个字word（四个字节）</p>
+<h3 id="汇编中的一些语法上特性">汇编中的一些语法上特性</h3>
+<h4 id="符号寄存器名称Symbolic-Register-Names">符号寄存器名称Symbolic Register Names</h4>
+<figure class="highlight plaintext"><figcaption><span>--> a0~a7</span></figcaption><table><tr><td class="code"><pre><span class="line">x10~x17 --&gt; a0~a7  用于函数调用的参数寄存器</span><br><span class="line">x0      --&gt; zero   代表0</span><br></pre></td></tr></table></figure>
+<h4 id="伪指令Pseudo-instructions">伪指令Pseudo-instructions</h4>
+<p>一些指令用于简化常见的汇编操作（不需要使用基础指令做大量拼接，简化为一个伪指令，类似语法糖）<br>
+但实际上伪指令只是便于我们增加汇编代码可读性，底层会转变为对应的基础指令的组合<br>
+example：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mv rd, rs  # 等价于 addi rd, rs, 0 	 mv——move value</span><br><span class="line">li rd, 13  # 等价于 addi rd, x0, 13     li——load immediate</span><br><span class="line">nop	       # 等价于 addi x0, x0, 0		无操作</span><br></pre></td></tr></table></figure>
-
-<h1 id="9-RISC-V-Procedures"><a href="#9-RISC-V-Procedures" class="headerlink" title="9. RISC-V: Procedures"></a>9. RISC-V: Procedures</h1><h3 id="RISC-V中的函数调用"><a href="#RISC-V中的函数调用" class="headerlink" title="RISC-V中的函数调用"></a>RISC-V中的函数调用</h3><h4 id="RISC-V函数调用的规范："><a href="#RISC-V函数调用的规范：" class="headerlink" title="RISC-V函数调用的规范："></a>RISC-V函数调用的规范：</h4><ol>
+<h1>9. RISC-V: Procedures</h1>
+<h3 id="RISC-V中的函数调用">RISC-V中的函数调用</h3>
+<h4 id="RISC-V函数调用的规范：">RISC-V函数调用的规范：</h4>
+<ol>
 <li>调用函数的主程序把参数放在函数可以找到他们的地方——设置一系列寄存器</li>
 <li>使用一条指令将处理器的控制权交给函数——跳转和链接指令 jal</li>
 <li>函数获取其需要的局部资源</li>
@@ -296,324 +375,444 @@
 <li>调用指令将控制权交回给主程序如 ret</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a0~a7作为8个函数参数寄存器argument register；</span><br><span class="line">其中a0和a1将保存函数的返回值；</span><br><span class="line">x1保存返回地址return address——我们称为ra；</span><br><span class="line">s0~s1（x8~x9）和s2~s11（x18~x27）存储寄存器saved register</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">jr ra	# 在函数调用结束后，从函数返回到ra返回值地址上。不使用j，因为j后得带着一个硬编码lable</span><br><span class="line">jal FunctionLabel # jump and link：自动存储返回值地址到ra，并且jump到函数地址上</span><br><span class="line">ret		# 等价于 jr ra  跳转回返回值地址</span><br><span class="line"></span><br><span class="line"># j, jr, ret都是伪指令</span><br><span class="line"># jal和jalr是基础指令</span><br></pre></td></tr></table></figure>
-
-<h4 id="汇编中的栈"><a href="#汇编中的栈" class="headerlink" title="汇编中的栈"></a>汇编中的栈</h4><p>s0<del>s1， s2</del>s11一般都会用来存储函数中产生的局部变量，但是我们知道函数结束后，寄存器要恢复到调用前的状态。假如函数中产生了局部变量int f 存储在了寄存器s0中，那么s0中的值放在哪里才能在函数结束时被恢复呢？<br>答案就是——<strong>栈！</strong><br>为了追踪栈内存，我们需要使用一个stack pointer栈内存指针sp，追踪当前栈的地址。<br>这个指针<strong>sp</strong>在RISC-V中规定存在<strong>寄存器x2</strong>中</p>
+<h4 id="汇编中的栈">汇编中的栈</h4>
+<p>s0~s1， s2~s11一般都会用来存储函数中产生的局部变量，但是我们知道函数结束后，寄存器要恢复到调用前的状态。假如函数中产生了局部变量int f 存储在了寄存器s0中，那么s0中的值放在哪里才能在函数结束时被恢复呢？<br>
+答案就是——<strong>栈！</strong><br>
+为了追踪栈内存，我们需要使用一个stack pointer栈内存指针sp，追踪当前栈的地址。<br>
+这个指针<strong>sp</strong>在RISC-V中规定存在<strong>寄存器x2</strong>中</p>
 <p>栈内存一般是从顶部开始，向下增长。因此入栈是递减栈指针，出栈是递增栈指针。</p>
-<p>通常，每个函数都有一组需要放在栈上的数据，我们称之为——<strong>栈帧stack frame</strong>（也叫堆栈帧，堆栈也指栈）<br>栈帧——存储返回值地址，返回值，参数，局部变量等一切东西<br>栈指针sp告诉我们最后一个栈帧的内存地址，即栈的最底部元素在哪里。</p>
+<p>通常，每个函数都有一组需要放在栈上的数据，我们称之为——<strong>栈帧stack frame</strong>（也叫堆栈帧，堆栈也指栈）<br>
+栈帧——存储返回值地址，返回值，参数，局部变量等一切东西<br>
+栈指针sp告诉我们最后一个栈帧的内存地址，即栈的最底部元素在哪里。</p>
 <p>example：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// C Code</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">Leaf</span><span class="params">(<span class="type">int</span> g, <span class="type">int</span> h, <span class="type">int</span> i, <span class="type">int</span> j)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> f;</span><br><span class="line">    f = (g+h) - (i+j);</span><br><span class="line">    <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 我们认为在汇编时会需要生成两个局部变量才行（ghij是参数有参数寄存器）</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># RISC-V</span><br><span class="line"># Leaf():</span><br><span class="line"># 以下三行叫做序言Prolog，为函数调用做前提准备</span><br><span class="line">addi sp, sp, -8		# 在栈中分配两个字存放两个局部变量，因此栈指针-8</span><br><span class="line">sw s1, 4(sp)	    # 将存储寄存器中的局部变量值store word存储至内存中距离sp指针4个字节偏移量的地址（向上）</span><br><span class="line">sw s0, 0(sp)	    # 将第二个局部变量值store word存储至内存中距离sp指针0个字节偏移量的地址（向上）</span><br><span class="line"># 接下来是函数的具体指令</span><br><span class="line">add s0, a0, a1	    # f = g+h</span><br><span class="line">add s1, a2, a3	    # s1 = i+j</span><br><span class="line">sub a0, s0, s1	    # return f = (g+h)-(i+j)</span><br><span class="line"># 准备函数返回了，先进行恢复——以下三行叫结尾epilogue</span><br><span class="line">lw s0, 0(sp)	    # 恢复s0中函数调用前存储的值</span><br><span class="line">lw s1, 4(sp)</span><br><span class="line">addi sp, sp, 8	    # 上移栈指针</span><br><span class="line"></span><br><span class="line">jr ra			   # 函数返回</span><br></pre></td></tr></table></figure>
-
-<h4 id="普通函数调用的过程中会产生的问题："><a href="#普通函数调用的过程中会产生的问题：" class="headerlink" title="普通函数调用的过程中会产生的问题："></a>普通函数调用的过程中会产生的问题：</h4><p>以上是主程序调用一个函数时会发生的过程，但是你肯定会思考，那么函数中调用函数呢，我们知道返回值地址存放在x1即ra寄存器中，那么下一次调用就会覆盖掉第一次调用时的返回值地址，参数寄存器也是同样的道理，因此，肯定有一套解决方案，请看如下！！</p>
-<h4 id="嵌套函数"><a href="#嵌套函数" class="headerlink" title="嵌套函数"></a>嵌套函数</h4><p><strong>Caller——调用者</strong><br><strong>Callee——被调用者</strong></p>
+<h4 id="普通函数调用的过程中会产生的问题：">普通函数调用的过程中会产生的问题：</h4>
+<p>以上是主程序调用一个函数时会发生的过程，但是你肯定会思考，那么函数中调用函数呢，我们知道返回值地址存放在x1即ra寄存器中，那么下一次调用就会覆盖掉第一次调用时的返回值地址，参数寄存器也是同样的道理，因此，肯定有一套解决方案，请看如下！！</p>
+<h4 id="嵌套函数">嵌套函数</h4>
+<p><strong>Caller——调用者</strong><br>
+<strong>Callee——被调用者</strong></p>
 <p>在使用jal指令时，会把寄存器分为保留寄存器Preserved Register和临时寄存器Volatile Register两</p>
 <ol>
-<li><p><strong>保留寄存器</strong>——在第一个函数调用过程中函数修改过的寄存器，如上面Leaf函数里的存储寄存器s0和s1，<br>第一个函数会把s0和s1的值存在栈帧中，同样的第二个函数也会把第一个函数修改过的s0和s1存入栈帧，自己再覆写s0和s1寄存器，由此循环往复！</p>
+<li>
+<p><strong>保留寄存器</strong>——在第一个函数调用过程中函数修改过的寄存器，如上面Leaf函数里的存储寄存器s0和s1，<br>
+第一个函数会把s0和s1的值存在栈帧中，同样的第二个函数也会把第一个函数修改过的s0和s1存入栈帧，自己再覆写s0和s1寄存器，由此循环往复！</p>
 <p>但注意，<strong>并不是所有的存储寄存器s0~s11都需要被写入栈帧，只有函数需要修改的那些才需要被写入</strong>，其他的不动！</p>
 </li>
-<li><p><strong>临时寄存器</strong>——返回值地址寄存器ra，参数寄存器a0~a7，这些临时寄存器变量大概率会被下次函数覆写，那些可能会被修改的临时寄存器才需要被存入栈帧中——要看情况！</p>
+<li>
+<p><strong>临时寄存器</strong>——返回值地址寄存器ra，参数寄存器a0~a7，这些临时寄存器变量大概率会被下次函数覆写，那些可能会被修改的临时寄存器才需要被存入栈帧中——要看情况！</p>
 </li>
 </ol>
 <p>下图说明了寄存器地存储情况，注意最右边一列是这些寄存器的值被存入了谁的栈帧中</p>
 <img src="/2024/09/19/CS61C/image-20240720020300875.png" class="" title="image-20240720020300875">
-
-<h4 id="嵌套函数的example："><a href="#嵌套函数的example：" class="headerlink" title="嵌套函数的example："></a>嵌套函数的example：</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// C Code</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">sumSquare</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> mult(x, x) + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h4 id="嵌套函数的example：">嵌套函数的example：</h4>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// C Code</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">sumSquare</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> mult(x, x) + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># RISC-V</span><br><span class="line">sumSquare:</span><br><span class="line">addi sp, sp, -8  # push stack</span><br><span class="line">sw ra, 4(sp)</span><br><span class="line">sw a1, 0(sp)	# save y</span><br><span class="line">mv a1, a0	    # mult(x, x) --&gt; mult(a0, a1)</span><br><span class="line">jal mult	    # 注意调用mult函数后，a0寄存器将存储着mult函数的返回值</span><br><span class="line">lw a1, 0(sp) 	# 恢复y</span><br><span class="line">add a0, a0, a1 	# a0 = mult(x,x) + y</span><br><span class="line">lw ra, 4(sp)    # 恢复return address</span><br><span class="line">addi sp, sp, 8  # pop stack</span><br><span class="line">jr ra</span><br></pre></td></tr></table></figure>
-
-<h3 id="C内存分配-vs-汇编内存分配"><a href="#C内存分配-vs-汇编内存分配" class="headerlink" title="C内存分配 vs 汇编内存分配"></a>C内存分配 vs 汇编内存分配</h3><h4 id="C内存分配："><a href="#C内存分配：" class="headerlink" title="C内存分配："></a>C内存分配：</h4><ol>
+<h3 id="C内存分配-vs-汇编内存分配">C内存分配 vs 汇编内存分配</h3>
+<h4 id="C内存分配：">C内存分配：</h4>
+<ol>
 <li>Static内存区：静态变量</li>
 <li>Heap内存区：malloc动态分配的内存</li>
 <li>Stack内存区：函数调用过程中的栈帧的内存</li>
 </ol>
-<p>各内存区的具体位置：<br>Stack位于内存最顶部的位置，向下扩展，有一个<strong>栈指针sp</strong>指向stack区域<br>RV32标准下的Program（存储程序的文本数据）规定位于地址0001 0000<del>16进制</del>地址处（很底部位置）<br>Static位于Program的上面，有一个<strong>全局指针gp</strong>指向static data区域<br>Heap位于Static的上面，向上扩展</p>
+<p>各内存区的具体位置：<br>
+Stack位于内存最顶部的位置，向下扩展，有一个<strong>栈指针sp</strong>指向stack区域<br>
+RV32标准下的Program（存储程序的文本数据）规定位于地址0001 0000~16进制~地址处（很底部位置）<br>
+Static位于Program的上面，有一个<strong>全局指针gp</strong>指向static data区域<br>
+Heap位于Static的上面，向上扩展</p>
 <img src="/2024/09/19/CS61C/image-20240720023428581.png" class="" title="image-20240720023428581">
-
-<h3 id="RISC-V指令集架构汇编语言总结！"><a href="#RISC-V指令集架构汇编语言总结！" class="headerlink" title="RISC-V指令集架构汇编语言总结！"></a>RISC-V指令集架构汇编语言总结！</h3><h4 id="基础指令："><a href="#基础指令：" class="headerlink" title="基础指令："></a>基础指令：</h4><img src="/2024/09/19/CS61C/image-20240720023615015.png" class="" title="image-20240720023615015">
-
-<h1 id="10-RISC-V-Instruction-Formats-I"><a href="#10-RISC-V-Instruction-Formats-I" class="headerlink" title="10. RISC-V: Instruction Formats I"></a>10. RISC-V: Instruction Formats I</h1><h4 id="RISC-V指令在二进制中的底层表示方式"><a href="#RISC-V指令在二进制中的底层表示方式" class="headerlink" title="RISC-V指令在二进制中的底层表示方式"></a>RISC-V指令在二进制中的底层表示方式</h4><p>为了遵循和数据大小的一致性，RISC-V中每一条指令的大小都为32-bit<br>32位可以表示至多2^32^，数量过多，为此我们会把32位的指令切分为<strong>字段fields</strong>，这些字段会给处理器一个线索，告知处理器这个指令的信息：什么类型的指令，对哪些寄存器进行操作<br>RISC-V的常见指令fields区分如下：</p>
+<h3 id="RISC-V指令集架构汇编语言总结！">RISC-V指令集架构汇编语言总结！</h3>
+<h4 id="基础指令：">基础指令：</h4>
+<img src="/2024/09/19/CS61C/image-20240720023615015.png" class="" title="image-20240720023615015">
+<h1>10. RISC-V: Instruction Formats I</h1>
+<h4 id="RISC-V指令在二进制中的底层表示方式">RISC-V指令在二进制中的底层表示方式</h4>
+<p>为了遵循和数据大小的一致性，RISC-V中每一条指令的大小都为32-bit<br>
+32位可以表示至多2^32^，数量过多，为此我们会把32位的指令切分为<strong>字段fields</strong>，这些字段会给处理器一个线索，告知处理器这个指令的信息：什么类型的指令，对哪些寄存器进行操作<br>
+RISC-V的常见指令fields区分如下：</p>
 <img src="/2024/09/19/CS61C/image-20240723195234652.png" class="" title="image-20240723195234652">
-
-<h4 id="R-Format-算术和逻辑运算的寄存器-寄存器指令"><a href="#R-Format-算术和逻辑运算的寄存器-寄存器指令" class="headerlink" title="R-Format 算术和逻辑运算的寄存器-寄存器指令"></a>R-Format 算术和逻辑运算的寄存器-寄存器指令</h4><img src="/2024/09/19/CS61C/image-20240724101851416.png" class="" title="image-20240724101851416">
-
+<h4 id="R-Format-算术和逻辑运算的寄存器-寄存器指令">R-Format 算术和逻辑运算的寄存器-寄存器指令</h4>
+<img src="/2024/09/19/CS61C/image-20240724101851416.png" class="" title="image-20240724101851416">
 <p>R-Format将指令分为6个字段Fields：</p>
 <figure class="highlight plaintext"><figcaption><span>opcode 操作码 7-bit</span></figcaption><table><tr><td class="code"><pre><span class="line">0-6 opcode 操作码 7-bit   （所有R-Format格式的指令操作码都是一样的：0110011）</span><br><span class="line">7-11 rd 表示目标寄存器的二进制代号 5-bit		（5-bit是因为寄存器有32个，刚好可以对应到其中一个寄存器）</span><br><span class="line">12-14 funct3 3-bit</span><br><span class="line">15-19 rs1 表示源寄存器1的二进制代号 5-bit</span><br><span class="line">20-24 rs2 表示源寄存器2的二进制代号 5-bit</span><br><span class="line">25-31 funct7 7-bit</span><br></pre></td></tr></table></figure>
-
 <p><strong>funct3和func7这10-bit数据决定了指令是执行哪种操作</strong></p>
 <p><strong>R-Format指令的一个实际例子：</strong></p>
 <img src="/2024/09/19/CS61C/image-20240724103218315.png" class="" title="image-20240724103218315">
-
 <p><strong>R格式的所有指令如下：</strong></p>
 <img src="/2024/09/19/CS61C/image-20240724103938960.png" class="" title="image-20240724103938960">
-
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 新指令</span><br><span class="line">slt rd, rs1, rs2</span><br><span class="line"># slt——set less than 小于</span><br><span class="line"># rd == rs1 &lt; rs2 ? 1 : 0</span><br></pre></td></tr></table></figure>
-
 <p><strong>注意到在高位第二位为1的指令都需要应用符号位扩展的操作</strong>——sub和sra</p>
-<h4 id="I-Format-立即数指令"><a href="#I-Format-立即数指令" class="headerlink" title="I-Format 立即数指令"></a>I-Format 立即数指令</h4><p><strong>I-Format的格式和一个具体指令：</strong><img src="/2024/09/19/CS61C/image-20240724105321564.png" class="" title="image-20240724105321564"></p>
+<h4 id="I-Format-立即数指令">I-Format 立即数指令</h4>
+<p><strong>I-Format的格式和一个具体指令：</strong><img src="/2024/09/19/CS61C/image-20240724105321564.png" class="" title="image-20240724105321564"></p>
 <p><strong>I-Format所有指令</strong></p>
 <img src="/2024/09/19/CS61C/image-20240724110019626.png" class="" title="image-20240724110019626">
-
-<p><strong>注意事项：</strong><br>1.涉及到位移的相关操作时，位移量限制为5位（图中<strong>shamt</strong>），因为寄存器是32位的，位移超过五位是无效的<br>2.指令有九条，但funct3只有3位最多支持8个编码，因此看到srli和srai共用了101编码。但是由于位移量限制为5位，因此高位的前七位可以被用于编码区分指令，这里遵循类似R-Format中第二高位位1代表需要符号扩展的规范，此处高二位为1也代表需要符号扩展，实际上带表指令srai——因为shift right arithmetic immediate 就是需要符号扩展的！</p>
-<h4 id="Load指令"><a href="#Load指令" class="headerlink" title="Load指令"></a>Load指令</h4><p>Load指令需要rd，rs1，immediate三个要素，因此可以使用<strong>I-Format</strong>，但更改其opcode</p>
+<p><strong>注意事项：</strong><br>
+1.涉及到位移的相关操作时，位移量限制为5位（图中<strong>shamt</strong>），因为寄存器是32位的，位移超过五位是无效的<br>
+2.指令有九条，但funct3只有3位最多支持8个编码，因此看到srli和srai共用了101编码。但是由于位移量限制为5位，因此高位的前七位可以被用于编码区分指令，这里遵循类似R-Format中第二高位位1代表需要符号扩展的规范，此处高二位为1也代表需要符号扩展，实际上带表指令srai——因为shift right arithmetic immediate 就是需要符号扩展的！</p>
+<h4 id="Load指令">Load指令</h4>
+<p>Load指令需要rd，rs1，immediate三个要素，因此可以使用<strong>I-Format</strong>，但更改其opcode</p>
 <img src="/2024/09/19/CS61C/image-20240724113031419.png" class="" title="image-20240724113031419">
-
 <img src="/2024/09/19/CS61C/image-20240724113145128.png" class="" title="image-20240724113145128">
-
-<p><strong>为啥lw没有unsigned版本？</strong><br>因位寄存器有32位，load word也是32位，不需要进行符号扩展，刚刚好填满对应。<br>而lb，lh，load byte和load half byte都需要进行符号扩展，即有效低位写入，高位以有效位中最高位（符号位）复制填充，而他们对应的unsigned版本就不需要进行符号扩展，仅以0填充</p>
-<h4 id="S-Format-存储指令"><a href="#S-Format-存储指令" class="headerlink" title="S-Format 存储指令"></a>S-Format 存储指令</h4><p><strong>S-Format格式和指令实例</strong></p>
+<p><strong>为啥lw没有unsigned版本？</strong><br>
+因位寄存器有32位，load word也是32位，不需要进行符号扩展，刚刚好填满对应。<br>
+而lb，lh，load byte和load half byte都需要进行符号扩展，即有效低位写入，高位以有效位中最高位（符号位）复制填充，而他们对应的unsigned版本就不需要进行符号扩展，仅以0填充</p>
+<h4 id="S-Format-存储指令">S-Format 存储指令</h4>
+<p><strong>S-Format格式和指令实例</strong></p>
 <img src="/2024/09/19/CS61C/image-20240724114033387.png" class="" title="image-20240724114033387">
-
 <p><strong>Immediate被分为高位7位和低位5位，实际上操作时会合成12位来看待这个立即数。分开两个地方在我们看来很混乱，但这样分，可以尽可能保证rs2寄存器的二进制码位于和其他格式相近的位置，有利于处理器的操作和硬件设计！</strong></p>
 <p>所有的S-Format指令：<img src="/2024/09/19/CS61C/image-20240724114528178.png" class="" title="image-20240724114528178"></p>
-<h1 id="11-RISC-V-Instruction-Formats-II"><a href="#11-RISC-V-Instruction-Formats-II" class="headerlink" title="11. RISC-V: Instruction Formats II"></a>11. RISC-V: Instruction Formats II</h1><h3 id="B-Format-分支指令"><a href="#B-Format-分支指令" class="headerlink" title="B-Format 分支指令"></a>B-Format 分支指令</h3><p><strong>PC相对寻址：</strong>根据Program Counter当前指向的指令为基础，相对寻址下一条指令的内存地址<br>PC指针的单位是一个字Word（四个字节byte）</p>
+<h1>11. RISC-V: Instruction Formats II</h1>
+<h3 id="B-Format-分支指令">B-Format 分支指令</h3>
+<p>**PC相对寻址：**根据Program Counter当前指向的指令为基础，相对寻址下一条指令的内存地址<br>
+PC指针的单位是一个字Word（四个字节byte）</p>
 <p>如下图：顺序执行和跳转分支，两种情况（注意下面的情况其实<strong>不适用于RISC-V，因为其支持压缩指令集！</strong>）</p>
 <img src="/2024/09/19/CS61C/image-20240724160228195.png" class="" title="image-20240724160228195">
 <p><strong>分支跳转时，加给PC的这个立即数可以是正数也可以是负数，对应分支向前和向后跳转！</strong></p>
-<h4 id="压缩指令集"><a href="#压缩指令集" class="headerlink" title="压缩指令集"></a>压缩指令集</h4><p>指令集架构的一个子集，其指令是<strong>16-bit</strong>的。在某些情况下，比如闪存中，为了保证内存的紧凑型，缩小占用空间。</p>
+<h4 id="压缩指令集">压缩指令集</h4>
+<p>指令集架构的一个子集，其指令是<strong>16-bit</strong>的。在某些情况下，比如闪存中，为了保证内存的紧凑型，缩小占用空间。</p>
 <p><strong>RISC-V的实际PC寻址方式——为了支持压缩指令集的16位和普通指令集中的32位，需要以半个字，两个字节为单位</strong></p>
 <p><strong>这里immediate * 2只是代表寻址的增减数是2的倍数，实际上二进制存储的时候偏移量是多少字节就以立即数的二进制形式存下，不需要再*2</strong></p>
 <img src="/2024/09/19/CS61C/image-20240724161051215.png" class="" title="image-20240724161051215">
-
 <p><strong>举例如下，16字节的偏移量，换算成二进制立即数，由于寻址偏移以2字节为单位，因此立即数最低位一定为0，否则就是奇数了，因此，我们可以用12-bit来表示13-bit的立即数，并且按照如下B-Format的方式存储，最左边是存储最高位数</strong></p>
 <img src="/2024/09/19/CS61C/image-20240724164041730.png" class="" title="image-20240724164041730">
-
 <p><strong>所有的B-Format分支指令</strong></p>
 <img src="/2024/09/19/CS61C/image-20240724162733069.png" class="" title="image-20240724162733069">
-
-<h3 id="U-Format-“Upper-Immediate上部立即数”-对长立即数的处理"><a href="#U-Format-“Upper-Immediate上部立即数”-对长立即数的处理" class="headerlink" title="U-Format “Upper Immediate上部立即数” 对长立即数的处理"></a>U-Format “Upper Immediate上部立即数” 对长立即数的处理</h3><p> 在I,B,S-Format中，立即数都由12位进行存储，如果想以32位存储，则还缺失20位。此时我们引入上部立即数格式</p>
+<h3 id="U-Format-“Upper-Immediate上部立即数”-对长立即数的处理">U-Format “Upper Immediate上部立即数” 对长立即数的处理</h3>
+<p>在I,B,S-Format中，立即数都由12位进行存储，如果想以32位存储，则还缺失20位。此时我们引入上部立即数格式</p>
 <img src="/2024/09/19/CS61C/image-20240725133046894.png" class="" title="image-20240725133046894">
-
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># U-Format的两条新指令——lui和auipc 基础指令</span><br><span class="line"># lui - Load Upper Immediate 将上部立即数加载到目标寄存器rd，并将最低12位置零</span><br><span class="line"># auipc - Add Upper Immediate to PC(Program Counter) 将上立即数添加到PC并且将结果存储在目标寄存器rd中</span><br><span class="line">Label: auipc x10, 0  # 把Label这个标签的地址的上20位放入x10寄存器</span><br></pre></td></tr></table></figure>
-
 <p><strong>加载长立即数的例子：先lui存储高20位，再用立即数加法加上低12位</strong></p>
 <img src="/2024/09/19/CS61C/image-20240725134327540.png" class="" title="image-20240725134327540">
-
-<h4 id="符号扩展带来的立即数加法问题！"><a href="#符号扩展带来的立即数加法问题！" class="headerlink" title="符号扩展带来的立即数加法问题！"></a>符号扩展带来的立即数加法问题！</h4><img src="/2024/09/19/CS61C/image-20240725135722484.png" class="" title="image-20240725135722484">
+<h4 id="符号扩展带来的立即数加法问题！">符号扩展带来的立即数加法问题！</h4>
+<img src="/2024/09/19/CS61C/image-20240725135722484.png" class="" title="image-20240725135722484">
 <p>如果你转换成二进制来看就会发现，由于<strong>addi加法会进行符号扩展</strong>，最终导致加完高20位中最低位减去了1！</p>
 <p><strong>解决方法：进行lui操作时就给lui的上立即数再加上1，这样底下addi加法后-1就会抵消得到正确值。幸运的是，我们有伪指令</strong></p>
-<h4 id="适用于加载长立即数的伪指令——li-（Load-Immediate）"><a href="#适用于加载长立即数的伪指令——li-（Load-Immediate）" class="headerlink" title="适用于加载长立即数的伪指令——li  （Load Immediate）"></a>适用于加载长立即数的伪指令——li  （Load Immediate）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Load Immediate</span><br><span class="line">li x10, 0xDEADBEEF</span><br></pre></td></tr></table></figure>
-
-<h3 id="J-Format-jal指令"><a href="#J-Format-jal指令" class="headerlink" title="J-Format jal指令"></a>J-Format jal指令</h3><img src="/2024/09/19/CS61C/image-20240725140607085.png" class="" title="image-20240725140607085">
-
-<p>jal 会将PC + 4的值存储在目标寄存器rd中，作为返回地址（这里的值是一个相对值，因为PC是相对寻址的）<br>随后让 PC = PC + Offset进行跳转<br><strong>注意这里立即数（代表的跳转标签）是20位，但由于我们跳转指令是2字节为单位，因此最低位一定是0，所以这里存的是除了最低位的20位。也就是说这里immediate实际上可以存到21位</strong></p>
+<h4 id="适用于加载长立即数的伪指令——li-（Load-Immediate）">适用于加载长立即数的伪指令——li  （Load Immediate）</h4>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Load Immediate</span><br><span class="line">li x10, 0xDEADBEEF</span><br></pre></td></tr></table></figure>
+<h3 id="J-Format-jal指令">J-Format jal指令</h3>
+<img src="/2024/09/19/CS61C/image-20240725140607085.png" class="" title="image-20240725140607085">
+<p>jal 会将PC + 4的值存储在目标寄存器rd中，作为返回地址（这里的值是一个相对值，因为PC是相对寻址的）<br>
+随后让 PC = PC + Offset进行跳转<br>
+<strong>注意这里立即数（代表的跳转标签）是20位，但由于我们跳转指令是2字节为单位，因此最低位一定是0，所以这里存的是除了最低位的20位。也就是说这里immediate实际上可以存到21位</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">j Label == jal x0, Label # 等价式</span><br><span class="line">jal ra, FuncName</span><br></pre></td></tr></table></figure>
-
-<h4 id="jalr指令-使用I-Format，这个指令是用于跳转到绝对地址的方法"><a href="#jalr指令-使用I-Format，这个指令是用于跳转到绝对地址的方法" class="headerlink" title="jalr指令 使用I-Format，这个指令是用于跳转到绝对地址的方法"></a>jalr指令 使用I-Format，这个指令是用于跳转到绝对地址的方法</h4><img src="/2024/09/19/CS61C/image-20240725142007316.png" class="" title="image-20240725142007316">
-
-<h3 id="RISC-V-Instruction-Formats-总结！"><a href="#RISC-V-Instruction-Formats-总结！" class="headerlink" title="RISC-V Instruction Formats 总结！"></a>RISC-V Instruction Formats 总结！</h3><img src="/2024/09/19/CS61C/image-20240725143043757.png" class="" title="image-20240725143043757">
-
-<h1 id="12-CALL——编译，汇编，链接，加载"><a href="#12-CALL——编译，汇编，链接，加载" class="headerlink" title="12. CALL——编译，汇编，链接，加载"></a>12. CALL——编译，汇编，链接，加载</h1><h3 id="翻译与解释"><a href="#翻译与解释" class="headerlink" title="翻译与解释"></a>翻译与解释</h3><p>翻译：从高级语言一步步转换成机器语言——C的编译过程<br>解释：将高级语言通过解释器直接解释为不依赖于体系结构的代码并执行——解释与执行一同进行，低性能<br>Java是半解释型语言，先经过Java Compiler编译为不依赖于机器结构的代码，再经过Java解释器解释代码</p>
-<h4 id="解释器的一些实际作用——模拟器"><a href="#解释器的一些实际作用——模拟器" class="headerlink" title="解释器的一些实际作用——模拟器"></a>解释器的一些实际作用——模拟器</h4><p>我们可以在现代硬件中通过模拟器执行古老硬件的代码，比如执行老游戏机的游戏，二者使用不同的指令集，这就是通过假装这个模拟器软件是一个硬件，并把老游戏的代码通过解释器解释为可执行的代码，在模拟器软件层面执行。虽然代码的解释和执行并没有得到硬件的帮助和加速，但成功获得了兼容性，非常神奇！</p>
-<h3 id="编译器：main-c-gt-main-s"><a href="#编译器：main-c-gt-main-s" class="headerlink" title="编译器：main.c -&gt; main.s"></a>编译器：main.c -&gt; main.s</h3><p>将C代码翻译为汇编代码——  这里翻译过程中编译器会根据你的编译参数做一些优化操作</p>
-<h3 id="汇编器：main-s-gt-main-o"><a href="#汇编器：main-s-gt-main-o" class="headerlink" title="汇编器：main.s -&gt; main.o"></a>汇编器：main.s -&gt; main.o</h3><p>将.s 汇编代码中的伪指令替换成基础指令，使用一些神奇的汇编指令，创建一些<strong>表</strong>，将汇编代码转为机器码，输出目标文件.o</p>
+<h4 id="jalr指令-使用I-Format，这个指令是用于跳转到绝对地址的方法">jalr指令 使用I-Format，这个指令是用于跳转到绝对地址的方法</h4>
+<img src="/2024/09/19/CS61C/image-20240725142007316.png" class="" title="image-20240725142007316">
+<h3 id="RISC-V-Instruction-Formats-总结！">RISC-V Instruction Formats 总结！</h3>
+<img src="/2024/09/19/CS61C/image-20240725143043757.png" class="" title="image-20240725143043757">
+<h1>12. CALL——编译，汇编，链接，加载</h1>
+<h3 id="翻译与解释">翻译与解释</h3>
+<p>翻译：从高级语言一步步转换成机器语言——C的编译过程<br>
+解释：将高级语言通过解释器直接解释为不依赖于体系结构的代码并执行——解释与执行一同进行，低性能<br>
+Java是半解释型语言，先经过Java Compiler编译为不依赖于机器结构的代码，再经过Java解释器解释代码</p>
+<h4 id="解释器的一些实际作用——模拟器">解释器的一些实际作用——模拟器</h4>
+<p>我们可以在现代硬件中通过模拟器执行古老硬件的代码，比如执行老游戏机的游戏，二者使用不同的指令集，这就是通过假装这个模拟器软件是一个硬件，并把老游戏的代码通过解释器解释为可执行的代码，在模拟器软件层面执行。虽然代码的解释和执行并没有得到硬件的帮助和加速，但成功获得了兼容性，非常神奇！</p>
+<h3 id="编译器：main-c-main-s">编译器：main.c -&gt; main.s</h3>
+<p>将C代码翻译为汇编代码——  这里翻译过程中编译器会根据你的编译参数做一些优化操作</p>
+<h3 id="汇编器：main-s-main-o">汇编器：main.s -&gt; main.o</h3>
+<p>将.s 汇编代码中的伪指令替换成基础指令，使用一些神奇的汇编指令，创建一些<strong>表</strong>，将汇编代码转为机器码，输出目标文件.o</p>
 <p>以下是一些指令，在汇编器解析.s文件的过程中用于指示接下来的数据是什么类型的内容<img src="/2024/09/19/CS61C/image-20240725161751716.png" class="" title="image-20240725161751716"></p>
-<h4 id="重定位表Relocation-Table"><a href="#重定位表Relocation-Table" class="headerlink" title="重定位表Relocation Table"></a>重定位表Relocation Table</h4><p>对于那些需要引用外部数据，静态数据，或者说通过<strong>绝对地址</strong>来获取的数据来说，在汇编器阶段是无法决定的，只有那些相对寻址的可以被确定下来。为此，汇编器会生成一个重定位表来把这些需要绝对地址的地方标上重定位符号，以便在最终链接阶段重定位最终的绝对地址</p>
-<h4 id="符号表Symbol-Table"><a href="#符号表Symbol-Table" class="headerlink" title="符号表Symbol Table"></a>符号表Symbol Table</h4><p>哪些符号（标签）可以被其他人调用或引用，以访问我的函数或数据</p>
-<h4 id="Object-File-Fromat目标文件-o-的格式"><a href="#Object-File-Fromat目标文件-o-的格式" class="headerlink" title="Object File Fromat目标文件.o 的格式"></a>Object File Fromat目标文件.o 的格式</h4><img src="/2024/09/19/CS61C/image-20240725163437702.png" class="" title="image-20240725163437702">
-
-<h3 id="链接器-main-o-XX-o-gt-a-out"><a href="#链接器-main-o-XX-o-gt-a-out" class="headerlink" title="链接器: main.o + XX.o -&gt; a.out"></a>链接器: main.o + XX.o -&gt; a.out</h3><img src="/2024/09/19/CS61C/image-20240725165021771.png" class="" title="image-20240725165021771">
-
-<p>1.把所有text段数据按顺序从各个.o文件中取出放在一起<br>2.把所有data段数据按顺序取出放在一起<br><strong>3.解决引用问题：浏览所有的重定位表，解决重定位问题——把绝对地址替换掉重定位符号的位置</strong></p>
-<h4 id="四种寻址方式"><a href="#四种寻址方式" class="headerlink" title="四种寻址方式"></a>四种寻址方式</h4><img src="/2024/09/19/CS61C/image-20240725165350230.png" class="" title="image-20240725165350230">
-
-<h4 id="静态链接与动态链接"><a href="#静态链接与动态链接" class="headerlink" title="静态链接与动态链接"></a>静态链接与动态链接</h4><p>静态链接：把所有.o文件链接起来，并且输出到可执行文件里，此时所有数据包括库文件的也加入到可执行文件<br>动态链接：有一行代码，标识需要include一个库，但是这个库的内容并没有加入到可执行文件中，只在可执行文件运行时去加载——也就是把责任推给加载器Loader，而非链接器Linker来做<br><strong>注意动态链接这一步目前来说都是在机器码层面进行的链接</strong></p>
+<h4 id="重定位表Relocation-Table">重定位表Relocation Table</h4>
+<p>对于那些需要引用外部数据，静态数据，或者说通过<strong>绝对地址</strong>来获取的数据来说，在汇编器阶段是无法决定的，只有那些相对寻址的可以被确定下来。为此，汇编器会生成一个重定位表来把这些需要绝对地址的地方标上重定位符号，以便在最终链接阶段重定位最终的绝对地址</p>
+<h4 id="符号表Symbol-Table">符号表Symbol Table</h4>
+<p>哪些符号（标签）可以被其他人调用或引用，以访问我的函数或数据</p>
+<h4 id="Object-File-Fromat目标文件-o-的格式">Object File Fromat目标文件.o 的格式</h4>
+<img src="/2024/09/19/CS61C/image-20240725163437702.png" class="" title="image-20240725163437702">
+<h3 id="链接器-main-o-XX-o-a-out">链接器: main.o + XX.o -&gt; a.out</h3>
+<img src="/2024/09/19/CS61C/image-20240725165021771.png" class="" title="image-20240725165021771">
+<p>1.把所有text段数据按顺序从各个.o文件中取出放在一起<br>
+2.把所有data段数据按顺序取出放在一起<br>
+<strong>3.解决引用问题：浏览所有的重定位表，解决重定位问题——把绝对地址替换掉重定位符号的位置</strong></p>
+<h4 id="四种寻址方式">四种寻址方式</h4>
+<img src="/2024/09/19/CS61C/image-20240725165350230.png" class="" title="image-20240725165350230">
+<h4 id="静态链接与动态链接">静态链接与动态链接</h4>
+<p>静态链接：把所有.o文件链接起来，并且输出到可执行文件里，此时所有数据包括库文件的也加入到可执行文件<br>
+动态链接：有一行代码，标识需要include一个库，但是这个库的内容并没有加入到可执行文件中，只在可执行文件运行时去加载——也就是把责任推给加载器Loader，而非链接器Linker来做<br>
+<strong>注意动态链接这一步目前来说都是在机器码层面进行的链接</strong></p>
 <p>动态链接的好处在于当一个庞大的库更新时，其他动态引用这个库的可执行文件都不需要重新编译，因为是在运行时引用</p>
-<h3 id="加载器："><a href="#加载器：" class="headerlink" title="加载器："></a>加载器：</h3><img src="/2024/09/19/CS61C/image-20240725170902100.png" class="" title="image-20240725170902100">
-
+<h3 id="加载器：">加载器：</h3>
+<img src="/2024/09/19/CS61C/image-20240725170902100.png" class="" title="image-20240725170902100">
 <p>加载器的任务是把可执行文件从磁盘中加载到内存中，设置所有需要设置的东西，并且运行之——这实际上是操作系统的任务之一</p>
-<h3 id="Example：Hello-World"><a href="#Example：Hello-World" class="headerlink" title="Example：Hello World"></a>Example：Hello World</h3><p>Hello.c</p>
+<h3 id="Example：Hello-World">Example：Hello World</h3>
+<p>Hello.c</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello, %s/n&quot;</span>, <span class="string">&quot;World&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>经过编译器 -&gt;<br>Hello.s</p>
+<p>经过编译器 -&gt;<br>
+Hello.s</p>
 <img src="/2024/09/19/CS61C/image-20240725172110828.png" class="" title="image-20240725172110828">
-
-<p>经过汇编器 -&gt;<br>Hello.o</p>
+<p>经过汇编器 -&gt;<br>
+Hello.o</p>
 <img src="/2024/09/19/CS61C/image-20240725172917743.png" class="" title="image-20240725172917743">
-
-<p><strong>图中只有中间的二进制码部分是存在于.o文件中的，其余都是便于阅读理解</strong><br><strong>其中标红的部分是涉及到绝对地址的，因此填上0需要链接器进行重定位！</strong></p>
-<p>经过链接器 -&gt;<br>a.out</p>
+<p><strong>图中只有中间的二进制码部分是存在于.o文件中的，其余都是便于阅读理解</strong><br>
+<strong>其中标红的部分是涉及到绝对地址的，因此填上0需要链接器进行重定位！</strong></p>
+<p>经过链接器 -&gt;<br>
+a.out</p>
 <img src="/2024/09/19/CS61C/image-20240725173435375.png" class="" title="image-20240725173435375">
-
-<h1 id="13-同步数字系统简介"><a href="#13-同步数字系统简介" class="headerlink" title="13. 同步数字系统简介"></a>13. 同步数字系统简介</h1><p>同步：所有操作都由一个“时钟”来控制<br>数字：现实世界中的电压值将被用于表示0，1这两个离散值</p>
-<h3 id="逻辑门的诞生"><a href="#逻辑门的诞生" class="headerlink" title="逻辑门的诞生"></a>逻辑门的诞生</h3><p>香农在论文中发现了电路与逻辑的关系，在其论文中联系起了电路与数学家乔治布尔的布尔代数，命名为Boolean</p>
-<h3 id="晶体管Transistor"><a href="#晶体管Transistor" class="headerlink" title="晶体管Transistor"></a>晶体管Transistor</h3><p>是一种半导体器件，可以通过另一个源来控制其处于导电或者不导电的状态。晶体管可以通过控制作为放大器和开关的作用。<br>现代数字系统：CMOS——Complementary Metal Oxide Semiconductor 互补金属氧化物半导体</p>
-<h4 id="充当开关的MOS晶体管的电路图"><a href="#充当开关的MOS晶体管的电路图" class="headerlink" title="充当开关的MOS晶体管的电路图"></a>充当开关的MOS晶体管的电路图</h4><img src="/2024/09/19/CS61C/image-20240727142355465.png" class="" title="image-20240727142355465">
-
+<h1>13. 同步数字系统简介</h1>
+<p>同步：所有操作都由一个“时钟”来控制<br>
+数字：现实世界中的电压值将被用于表示0，1这两个离散值</p>
+<h3 id="逻辑门的诞生">逻辑门的诞生</h3>
+<p>香农在论文中发现了电路与逻辑的关系，在其论文中联系起了电路与数学家乔治布尔的布尔代数，命名为Boolean</p>
+<h3 id="晶体管Transistor">晶体管Transistor</h3>
+<p>是一种半导体器件，可以通过另一个源来控制其处于导电或者不导电的状态。晶体管可以通过控制作为放大器和开关的作用。<br>
+现代数字系统：CMOS——Complementary Metal Oxide Semiconductor 互补金属氧化物半导体</p>
+<h4 id="充当开关的MOS晶体管的电路图">充当开关的MOS晶体管的电路图</h4>
+<img src="/2024/09/19/CS61C/image-20240727142355465.png" class="" title="image-20240727142355465">
 <img src="/2024/09/19/CS61C/image-20240727143054072.png" class="" title="image-20240727143054072">
-
-<h4 id="与非门NAND-Gate-——-可以用来构建与，或，非门"><a href="#与非门NAND-Gate-——-可以用来构建与，或，非门" class="headerlink" title="与非门NAND Gate —— 可以用来构建与，或，非门"></a>与非门NAND Gate —— 可以用来构建与，或，非门</h4><img src="/2024/09/19/CS61C/image-20240727144949552.png" class="" title="image-20240727144949552">
-
-<h3 id="信号与波形"><a href="#信号与波形" class="headerlink" title="信号与波形"></a>信号与波形</h3><p><strong>信号</strong>：通过导线传输，当数字值被视为0和1时才可视作信号，一条导线只有一个信号，会存在<strong>延迟</strong></p>
-<h4 id="加法器电路"><a href="#加法器电路" class="headerlink" title="加法器电路"></a>加法器电路</h4><p>将4bit的电压值加和视作一个值</p>
+<h4 id="与非门NAND-Gate-——-可以用来构建与，或，非门">与非门NAND Gate —— 可以用来构建与，或，非门</h4>
+<img src="/2024/09/19/CS61C/image-20240727144949552.png" class="" title="image-20240727144949552">
+<h3 id="信号与波形">信号与波形</h3>
+<p><strong>信号</strong>：通过导线传输，当数字值被视为0和1时才可视作信号，一条导线只有一个信号，会存在<strong>延迟</strong></p>
+<h4 id="加法器电路">加法器电路</h4>
+<p>将4bit的电压值加和视作一个值</p>
 <img src="/2024/09/19/CS61C/image-20240727150617791.png" class="" title="image-20240727150617791">
 <img src="/2024/09/19/CS61C/image-20240727151049920.png" class="" title="image-20240727151049920">
-
 <p>可以看到加法器存在延迟，如图中A = 3, B = 10的初始，C仍然等于上一次结果。这个延迟称为<strong>加法器传播延迟</strong></p>
-<h3 id="计算机工程中的两类电路（大类）"><a href="#计算机工程中的两类电路（大类）" class="headerlink" title="计算机工程中的两类电路（大类）"></a>计算机工程中的两类电路（大类）</h3><h4 id="组合逻辑电路"><a href="#组合逻辑电路" class="headerlink" title="组合逻辑电路"></a>组合逻辑电路</h4><p>没有副作用，不记录状态，没有记忆，输出只与输入有关，相同的输入得到相同输出<br>eg. 加法器</p>
-<h4 id="时序电路（状态电路）"><a href="#时序电路（状态电路）" class="headerlink" title="时序电路（状态电路）"></a>时序电路（状态电路）</h4><p>有状态变化，有记忆特性<br>eg. 寄存器，缓存，磁盘，内存</p>
-<h1 id="14-时序电路（状态电路）"><a href="#14-时序电路（状态电路）" class="headerlink" title="14. 时序电路（状态电路）"></a>14. 时序电路（状态电路）</h1><h3 id="累加器"><a href="#累加器" class="headerlink" title="累加器"></a>累加器</h3><img src="/2024/09/19/CS61C/image-20240727154746282.png" class="" title="image-20240727154746282">
-
-<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><img src="/2024/09/19/CS61C/image-20240727164346799.png" class="" title="image-20240727164346799">
-
+<h3 id="计算机工程中的两类电路（大类）">计算机工程中的两类电路（大类）</h3>
+<h4 id="组合逻辑电路">组合逻辑电路</h4>
+<p>没有副作用，不记录状态，没有记忆，输出只与输入有关，相同的输入得到相同输出<br>
+eg. 加法器</p>
+<h4 id="时序电路（状态电路）">时序电路（状态电路）</h4>
+<p>有状态变化，有记忆特性<br>
+eg. 寄存器，缓存，磁盘，内存</p>
+<h1>14. 时序电路（状态电路）</h1>
+<h3 id="累加器">累加器</h3>
+<img src="/2024/09/19/CS61C/image-20240727154746282.png" class="" title="image-20240727154746282">
+<h3 id="寄存器">寄存器</h3>
+<img src="/2024/09/19/CS61C/image-20240727164346799.png" class="" title="image-20240727164346799">
 <p>一个n位的寄存器由n个一位的触发器（FF）组成！</p>
-<h4 id="触发器——上升沿触发型（意味着在Clock时钟从0到1的时候被触发）"><a href="#触发器——上升沿触发型（意味着在Clock时钟从0到1的时候被触发）" class="headerlink" title="触发器——上升沿触发型（意味着在Clock时钟从0到1的时候被触发）"></a>触发器——上升沿触发型（意味着在Clock时钟从0到1的时候被触发）</h4><img src="/2024/09/19/CS61C/image-20240727164245218.png" class="" title="image-20240727164245218">
-
-<h3 id="回顾——所有时间延迟，寄存器，触发器相关的名词"><a href="#回顾——所有时间延迟，寄存器，触发器相关的名词" class="headerlink" title="回顾——所有时间延迟，寄存器，触发器相关的名词"></a>回顾——所有时间延迟，寄存器，触发器相关的名词</h3><img src="/2024/09/19/CS61C/image-20240727172013645.png" class="" title="image-20240727172013645">
-
-<h3 id="有限状态机FSM"><a href="#有限状态机FSM" class="headerlink" title="有限状态机FSM"></a>有限状态机FSM</h3><p>抽象的电路图如下：<br>CL: Combination Logic 组合逻辑电路<br>PS: Previous State<br>NS: Next State</p>
+<h4 id="触发器——上升沿触发型（意味着在Clock时钟从0到1的时候被触发）">触发器——上升沿触发型（意味着在Clock时钟从0到1的时候被触发）</h4>
+<img src="/2024/09/19/CS61C/image-20240727164245218.png" class="" title="image-20240727164245218">
+<h3 id="回顾——所有时间延迟，寄存器，触发器相关的名词">回顾——所有时间延迟，寄存器，触发器相关的名词</h3>
+<img src="/2024/09/19/CS61C/image-20240727172013645.png" class="" title="image-20240727172013645">
+<h3 id="有限状态机FSM">有限状态机FSM</h3>
+<p>抽象的电路图如下：<br>
+CL: Combination Logic 组合逻辑电路<br>
+PS: Previous State<br>
+NS: Next State</p>
 <img src="/2024/09/19/CS61C/image-20240729214743948.png" class="" title="image-20240729214743948">
-
-<h1 id="15-组合逻辑电路"><a href="#15-组合逻辑电路" class="headerlink" title="15. 组合逻辑电路"></a>15. 组合逻辑电路</h1><h3 id="数据多路复用器-Data-Multiplexors"><a href="#数据多路复用器-Data-Multiplexors" class="headerlink" title="数据多路复用器 Data Multiplexors"></a>数据多路复用器 Data Multiplexors</h3><img src="/2024/09/19/CS61C/image-20240827183258666.png" class="" title="image-20240827183258666">
-
-<p>二路复用器，a，b，s三个输入，得到一个输出。其中s是控制作用，结论是：<br>c = (~s)a + sb<br>即：非s为真，c的值取决于a；s为真，c的值取决于b</p>
+<h1>15. 组合逻辑电路</h1>
+<h3 id="数据多路复用器-Data-Multiplexors">数据多路复用器 Data Multiplexors</h3>
+<img src="/2024/09/19/CS61C/image-20240827183258666.png" class="" title="image-20240827183258666">
+<p>二路复用器，a，b，s三个输入，得到一个输出。其中s是控制作用，结论是：<br>
+c = (~s)a + sb<br>
+即：非s为真，c的值取决于a；s为真，c的值取决于b</p>
 <p>其实就是多路中只有一路决定输出</p>
-<h3 id="算术逻辑单元-Arithmetic-and-Logic-Unit-ALU"><a href="#算术逻辑单元-Arithmetic-and-Logic-Unit-ALU" class="headerlink" title="算术逻辑单元 Arithmetic and Logic Unit (ALU)"></a>算术逻辑单元 Arithmetic and Logic Unit (ALU)</h3><p>摆烂了…随意看了下加法器与减法器电路，=</p>
-<h1 id="16-单核CPU设计-1-数据通路"><a href="#16-单核CPU设计-1-数据通路" class="headerlink" title="16. 单核CPU设计-1 数据通路"></a>16. 单核CPU设计-1 数据通路</h1><h3 id="数据通路-Data-Path"><a href="#数据通路-Data-Path" class="headerlink" title="数据通路 Data Path"></a>数据通路 Data Path</h3><p>处理器中包含执行指令集架构中所有指令所需的硬件部分</p>
-<h3 id="控制-Control"><a href="#控制-Control" class="headerlink" title="控制 Control"></a>控制 Control</h3><p>控制数据路径，告诉路径如何设置自身</p>
-<h3 id="执行汇编指令的几个步骤"><a href="#执行汇编指令的几个步骤" class="headerlink" title="执行汇编指令的几个步骤"></a>执行汇编指令的几个步骤</h3><p>1.指令获取<br>2.指令解码<br>3.寄存器访问<br>4.执行阶段<br>5.内存访问<br>6.写回阶段</p>
-<h3 id="add指令的数据通路设计"><a href="#add指令的数据通路设计" class="headerlink" title="add指令的数据通路设计"></a>add指令的数据通路设计</h3><p>指令 <strong>add rd, rs1, rs2</strong> 的数据通路：</p>
+<h3 id="算术逻辑单元-Arithmetic-and-Logic-Unit-ALU">算术逻辑单元 Arithmetic and Logic Unit (ALU)</h3>
+<p>摆烂了…随意看了下加法器与减法器电路，=</p>
+<h1>16. 单核CPU设计-1 数据通路</h1>
+<h3 id="数据通路-Data-Path">数据通路 Data Path</h3>
+<p>处理器中包含执行指令集架构中所有指令所需的硬件部分</p>
+<h3 id="控制-Control">控制 Control</h3>
+<p>控制数据路径，告诉路径如何设置自身</p>
+<h3 id="执行汇编指令的几个步骤">执行汇编指令的几个步骤</h3>
+<p>1.指令获取<br>
+2.指令解码<br>
+3.寄存器访问<br>
+4.执行阶段<br>
+5.内存访问<br>
+6.写回阶段</p>
+<h3 id="add指令的数据通路设计">add指令的数据通路设计</h3>
+<p>指令 <strong>add rd, rs1, rs2</strong> 的数据通路：</p>
 <img src="/2024/09/19/CS61C/image-20240828161302935.png" class="" title="image-20240828161302935">
-
 <p>上述add指令的延时图：</p>
 <img src="/2024/09/19/CS61C/image-20240828162208120.png" class="" title="image-20240828162208120">
-
-<h3 id="sub指令的数据通路设计"><a href="#sub指令的数据通路设计" class="headerlink" title="sub指令的数据通路设计"></a>sub指令的数据通路设计</h3><img src="/2024/09/19/CS61C/image-20240828162657453.png" class="" title="image-20240828162657453">
-
-<p>可见，只是给ALU单元上增加了一个控制元件，选择是执行加法还是减法即可<br>其他R-Type指令也采用相同的数据通路设计，只是控制这里改变一下即可！</p>
-<h3 id="addi-立即数加法指令的数据通路"><a href="#addi-立即数加法指令的数据通路" class="headerlink" title="addi 立即数加法指令的数据通路"></a>addi 立即数加法指令的数据通路</h3><img src="/2024/09/19/CS61C/image-20240828163115871.png" class="" title="image-20240828163115871">
-
-<p>在刚刚R-Type指令数据通路基础上，加上一个mux（多路复用器），和对应的控制单元BSel，效果是当BSel的信号为0时，多路复用器的输出等于rs2，BSel为1，多路复用器的输出等于Imm立即数。<br>此数据通路就是RISC-V中R-Type和I-Type指令共享的数据通路，可以支持以上两种类型的指令！</p>
+<h3 id="sub指令的数据通路设计">sub指令的数据通路设计</h3>
+<img src="/2024/09/19/CS61C/image-20240828162657453.png" class="" title="image-20240828162657453">
+<p>可见，只是给ALU单元上增加了一个控制元件，选择是执行加法还是减法即可<br>
+其他R-Type指令也采用相同的数据通路设计，只是控制这里改变一下即可！</p>
+<h3 id="addi-立即数加法指令的数据通路">addi 立即数加法指令的数据通路</h3>
+<img src="/2024/09/19/CS61C/image-20240828163115871.png" class="" title="image-20240828163115871">
+<p>在刚刚R-Type指令数据通路基础上，加上一个mux（多路复用器），和对应的控制单元BSel，效果是当BSel的信号为0时，多路复用器的输出等于rs2，BSel为1，多路复用器的输出等于Imm立即数。<br>
+此数据通路就是RISC-V中R-Type和I-Type指令共享的数据通路，可以支持以上两种类型的指令！</p>
 <p><strong>Imm立即数的生成</strong></p>
 <img src="/2024/09/19/CS61C/image-20240828163455782.png" class="" title="image-20240828163455782">
-
 <p>Imm Gen模块：</p>
 <img src="/2024/09/19/CS61C/image-20240828163948277.png" class="" title="image-20240828163948277">
-
 <p>将指令内存的addi指令上的imm部分的12位连上立即数的12位，寄存器高20位符号扩展（复制）imm的第十二位</p>
-<h1 id="17-单核CPU设计-2-数据通路"><a href="#17-单核CPU设计-2-数据通路" class="headerlink" title="17. 单核CPU设计-2 数据通路"></a>17. 单核CPU设计-2 数据通路</h1><h3 id="load-word指令的数据通路"><a href="#load-word指令的数据通路" class="headerlink" title="load word指令的数据通路"></a>load word指令的数据通路</h3><p><strong>为了支持load word，数据通路增加设计如下，加入与内存的交互</strong></p>
+<h1>17. 单核CPU设计-2 数据通路</h1>
+<h3 id="load-word指令的数据通路">load word指令的数据通路</h3>
+<p><strong>为了支持load word，数据通路增加设计如下，加入与内存的交互</strong></p>
 <img src="/2024/09/19/CS61C/image-20240902135143825.png" class="" title="image-20240902135143825">
-
-<h3 id="支持store-word指令"><a href="#支持store-word指令" class="headerlink" title="支持store word指令"></a>支持store word指令</h3><p>S-Format指令中，立即数被分开在两个部分，而I-Format中就在最高12位<br>因此我们的立即数生成单元需要进行修改以支持这两种立即数格式<br>不过可以注意到二者最高7位都在最高位，因此这一块可以不变，而且选择最高位进行符号扩展也没有问题<br>接下来就是添加一个<strong>多路复用器</strong>，选择I格式时，取接下来的五位，选择S格式时，取11-7位的五位</p>
+<h3 id="支持store-word指令">支持store word指令</h3>
+<p>S-Format指令中，立即数被分开在两个部分，而I-Format中就在最高12位<br>
+因此我们的立即数生成单元需要进行修改以支持这两种立即数格式<br>
+不过可以注意到二者最高7位都在最高位，因此这一块可以不变，而且选择最高位进行符号扩展也没有问题<br>
+接下来就是添加一个<strong>多路复用器</strong>，选择I格式时，取接下来的五位，选择S格式时，取11-7位的五位</p>
 <img src="/2024/09/19/CS61C/image-20240902135931802.png" class="" title="image-20240902135931802">
-
 <p>在数据通路设计上，立即数生成器做如上更新，同时加入一个rs2指向内存中的写入线路，同时设置内存Data Memory的MemRW信号为Write写入即可，这样就可以把寄存器的值写入内存中</p>
 <img src="/2024/09/19/CS61C/image-20240902141448602.png" class="" title="image-20240902141448602">
-
-<h3 id="支持分支指令"><a href="#支持分支指令" class="headerlink" title="支持分支指令"></a>支持分支指令</h3><p><strong>分支指令的数据通路</strong></p>
+<h3 id="支持分支指令">支持分支指令</h3>
+<p><strong>分支指令的数据通路</strong></p>
 <img src="/2024/09/19/CS61C/image-20240902142444918.png" class="" title="image-20240902142444918">
-
-<p>1.我们需要将立即数生成器设置为B-Format立即数类型<br>2.我们需要将Branch Comp模块的控制信号设置为无符号或是有符号<br>3.我们需要控制ALU单元前的黄色的多路复用器，确定输入ALU的是寄存器的值还是Program Counter的值</p>
+<p>1.我们需要将立即数生成器设置为B-Format立即数类型<br>
+2.我们需要将Branch Comp模块的控制信号设置为无符号或是有符号<br>
+3.我们需要控制ALU单元前的黄色的多路复用器，确定输入ALU的是寄存器的值还是Program Counter的值</p>
 <p><strong>Branch Comp模块</strong></p>
 <img src="/2024/09/19/CS61C/image-20240902143112941.png" class="" title="image-20240902143112941">
-
 <p><strong>B-Format中的立即数生成器</strong></p>
 <p>B格式的存储方式如下，可见imm[11]放在立即数中的最低一位（指令位第七位），因此在生成立即数时，需要将这一位移动到最高第二位<img src="/2024/09/19/CS61C/image-20240724164041730.png" class="" title="image-20240724164041730"></p>
 <p>在立即数生成器中，只需使用一个一位宽的多路复用器，选择是否移动该位的数字即可</p>
-<h3 id="支持JALR-Jump-and-Link-Register指令——I-Format"><a href="#支持JALR-Jump-and-Link-Register指令——I-Format" class="headerlink" title="支持JALR Jump and Link Register指令——I-Format"></a>支持JALR Jump and Link Register指令——I-Format</h3><img src="/2024/09/19/CS61C/image-20240902144837255.png" class="" title="image-20240902144837255">
-
+<h3 id="支持JALR-Jump-and-Link-Register指令——I-Format">支持JALR Jump and Link Register指令——I-Format</h3>
+<img src="/2024/09/19/CS61C/image-20240902144837255.png" class="" title="image-20240902144837255">
 <p>将PC+4的值写入rd寄存器作为函数调用的返回地址，通过将rs+immediate的值写入PC来跳转到对应函数（绝对寻址）</p>
 <p><strong>JALR数据通路，仅在原基础上添加了黄线内容</strong></p>
 <img src="/2024/09/19/CS61C/image-20240902145300876.png" class="" title="image-20240902145300876">
-
-<h3 id="支持JAL-Jump-and-Link指令——J-Format"><a href="#支持JAL-Jump-and-Link指令——J-Format" class="headerlink" title="支持JAL Jump and Link指令——J-Format"></a>支持JAL Jump and Link指令——J-Format</h3><img src="/2024/09/19/CS61C/image-20240902150018890.png" class="" title="image-20240902150018890">
-
-<p>有20位宽的立即数<br>PC+4的值写入rd寄存器作为函数返回地址<br>设置PC = PC + immediate 作为PC要跳转到的函数地址（相对寻址）</p>
+<h3 id="支持JAL-Jump-and-Link指令——J-Format">支持JAL Jump and Link指令——J-Format</h3>
+<img src="/2024/09/19/CS61C/image-20240902150018890.png" class="" title="image-20240902150018890">
+<p>有20位宽的立即数<br>
+PC+4的值写入rd寄存器作为函数返回地址<br>
+设置PC = PC + immediate 作为PC要跳转到的函数地址（相对寻址）</p>
 <p>可见我们支持该指令只需添加J-Format立即数生成即可</p>
-<h3 id="支持U-Format——长立即数"><a href="#支持U-Format——长立即数" class="headerlink" title="支持U-Format——长立即数"></a>支持U-Format——长立即数</h3>  <img src="/2024/09/19/CS61C/image-20240902150640016.png" class="" title="image-20240902150640016">
-
-<p>U格式只有两条指令：LUI和AUIPC<br>lui将20位长立即数加载到rd寄存器中，并将低12位清零<br>auipc将长立即数与PC相加，得到的结果存储在rd中</p>
-<h3 id="RISC-V单核CPU数据通路总图"><a href="#RISC-V单核CPU数据通路总图" class="headerlink" title="RISC-V单核CPU数据通路总图"></a>RISC-V单核CPU数据通路总图</h3><img src="/2024/09/19/CS61C/image-20240902151249712.png" class="" title="image-20240902151249712">
-
+<h3 id="支持U-Format——长立即数">支持U-Format——长立即数</h3>
+  <img src="/2024/09/19/CS61C/image-20240902150640016.png" class="" title="image-20240902150640016">
+<p>U格式只有两条指令：LUI和AUIPC<br>
+lui将20位长立即数加载到rd寄存器中，并将低12位清零<br>
+auipc将长立即数与PC相加，得到的结果存储在rd中</p>
+<h3 id="RISC-V单核CPU数据通路总图">RISC-V单核CPU数据通路总图</h3>
+<img src="/2024/09/19/CS61C/image-20240902151249712.png" class="" title="image-20240902151249712">
 <p>可以支持所有的汇编指令！</p>
 <img src="/2024/09/19/CS61C/image-20240902151331028.png" class="" title="image-20240902151331028">
-
-<h1 id="18-单核CPU设计-3-控制模块"><a href="#18-单核CPU设计-3-控制模块" class="headerlink" title="18. 单核CPU设计-3 控制模块"></a>18. 单核CPU设计-3 控制模块</h1><h3 id="CSR-——Control-and-Status-Register"><a href="#CSR-——Control-and-Status-Register" class="headerlink" title="CSR ——Control and Status Register"></a>CSR ——Control and Status Register</h3><p>控制和状态寄存器：与我们的32个通用寄存器分开，有多达4096个.常用于监控状态和性能以及与其他设备（如外围设备）进行通信</p>
+<h1>18. 单核CPU设计-3 控制模块</h1>
+<h3 id="CSR-——Control-and-Status-Register">CSR ——Control and Status Register</h3>
+<p>控制和状态寄存器：与我们的32个通用寄存器分开，有多达4096个.常用于监控状态和性能以及与其他设备（如外围设备）进行通信</p>
 <p>CSR相关的指令格式如下</p>
 <img src="/2024/09/19/CS61C/image-20240903114818523.png" class="" title="image-20240903114818523">
-
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># csr read write 将csr内容复制到rd中（rd不是x0寄存器时），并且将rs1的内容复制到csr中</span><br><span class="line">csrrw rd, csr, rs1</span><br></pre></td></tr></table></figure>
-
-<h3 id="指令的Timing"><a href="#指令的Timing" class="headerlink" title="指令的Timing"></a>指令的Timing</h3><p>add指令的延时图：</p>
+<h3 id="指令的Timing">指令的Timing</h3>
+<p>add指令的延时图：</p>
 <p>其中X表示一束输出或输入端口（在此是32个端口）<img src="/2024/09/19/CS61C/image-20240903122815612.png" class="" title="image-20240903122815612"></p>
-<p>关键路径：指令执行中耗时最长的延时路径<br>在此处add中是执行阶段，下图深黄色路径</p>
+<p>关键路径：指令执行中耗时最长的延时路径<br>
+在此处add中是执行阶段，下图深黄色路径</p>
 <img src="/2024/09/19/CS61C/image-20240903123801732.png" class="" title="image-20240903123801732">
-
-<h3 id="控制逻辑设计"><a href="#控制逻辑设计" class="headerlink" title="控制逻辑设计"></a>控制逻辑设计</h3><p>控制模块其实就是一张表，选取一个要执行的指令后从中读取要设置的控制信号的值即可！</p>
+<h3 id="控制逻辑设计">控制逻辑设计</h3>
+<p>控制模块其实就是一张表，选取一个要执行的指令后从中读取要设置的控制信号的值即可！</p>
 <img src="/2024/09/19/CS61C/image-20240903124349622.png" class="" title="image-20240903124349622">
-
 <p>设计控制逻辑，我们可以使用一个只读的写死的内存表，也可以使用一堆与门和或门。在实践中，我们使用后者</p>
-<p>如图，指令解码后，会有唯一一条指令黄线亮起，并且寻址到只读内存表（右边部分）对应该指令的控制信号内容处<br>这个地址解码器是一个很大的与门。控制信号的输出部分则是一个巨大的或门<img src="/2024/09/19/CS61C/image-20240903125423603.png" class="" title="image-20240903125423603"></p>
+<p>如图，指令解码后，会有唯一一条指令黄线亮起，并且寻址到只读内存表（右边部分）对应该指令的控制信号内容处<br>
+这个地址解码器是一个很大的与门。控制信号的输出部分则是一个巨大的或门<img src="/2024/09/19/CS61C/image-20240903125423603.png" class="" title="image-20240903125423603"></p>
 <p>add指令的与门解码如下：</p>
 <img src="/2024/09/19/CS61C/image-20240903125944580.png" class="" title="image-20240903125944580">
-
-<h1 id="22-Caches-1"><a href="#22-Caches-1" class="headerlink" title="22. Caches-1"></a>22. Caches-1</h1><h3 id="二进制前缀"><a href="#二进制前缀" class="headerlink" title="二进制前缀"></a>二进制前缀</h3><p>快速推导寻址的简洁记法</p>
+<h1>22. Caches-1</h1>
+<h3 id="二进制前缀">二进制前缀</h3>
+<p>快速推导寻址的简洁记法</p>
 <img src="/2024/09/19/CS61C/image-20240904204634888.png" class="" title="image-20240904204634888">
-
 <img src="/2024/09/19/CS61C/image-20240904204413893.png" class="" title="image-20240904204413893">
-
-<p>比如2^34^bit是多少，十位数是3，因此是G，个位数是4，因此是2^4^=16<br>答案是 16GB！</p>
-<h3 id="Cache出现的原因——CPU速度和访问内存的速度的差距问题"><a href="#Cache出现的原因——CPU速度和访问内存的速度的差距问题" class="headerlink" title="Cache出现的原因——CPU速度和访问内存的速度的差距问题"></a>Cache出现的原因——CPU速度和访问内存的速度的差距问题</h3><img src="/2024/09/19/CS61C/image-20240904205218647.png" class="" title="image-20240904205218647">
-
+<p>比如2^34^bit是多少，十位数是3，因此是G，个位数是4，因此是2^4^=16<br>
+答案是 16GB！</p>
+<h3 id="Cache出现的原因——CPU速度和访问内存的速度的差距问题">Cache出现的原因——CPU速度和访问内存的速度的差距问题</h3>
+<img src="/2024/09/19/CS61C/image-20240904205218647.png" class="" title="image-20240904205218647">
 <p>可见CPU性能提升远远大于内存的提升，随着技术升级，由于不断加入新的东西和新的计算机元件，内存的物理距离可能就离CPU寄存器很远，同时访问内存的指令从只需要一个变化到了几千个，访问内存的速度会严重影响指令执行效率，因此我们迫切需要一种技术来解决该问题</p>
-<h3 id="Cache是什么"><a href="#Cache是什么" class="headerlink" title="Cache是什么"></a>Cache是什么</h3><p><strong>Cache缓存始终是内存内容的一个副本</strong></p>
+<h3 id="Cache是什么">Cache是什么</h3>
+<p><strong>Cache缓存始终是内存内容的一个副本</strong></p>
 <p>Cache是一个<strong>位于CPU上的存储空间</strong>，其速度，容量，价格都介于DRAM和寄存器之间，因此是一种折中之举</p>
-<h3 id="内存层次结构（宽泛的内存）"><a href="#内存层次结构（宽泛的内存）" class="headerlink" title="内存层次结构（宽泛的内存）"></a>内存层次结构（宽泛的内存）</h3><p>寄存器 &lt;— 缓存 &lt;— 内存 &lt;— 磁盘</p>
-<h3 id="Cache的设计原则"><a href="#Cache的设计原则" class="headerlink" title="Cache的设计原则"></a>Cache的设计原则</h3><h4 id="时间局部性"><a href="#时间局部性" class="headerlink" title="时间局部性"></a>时间局部性</h4><p>如果我最近使用过它，我很可能很快就会再次使用它</p>
-<h4 id="空间局部性"><a href="#空间局部性" class="headerlink" title="空间局部性"></a>空间局部性</h4><p>如果我访问了某个内存位置，我很可能很快就会访问其邻居</p>
-<h1 id="23-Caches-2"><a href="#23-Caches-2" class="headerlink" title="23. Caches-2"></a>23. Caches-2</h1><h3 id="直接映射缓存"><a href="#直接映射缓存" class="headerlink" title="直接映射缓存"></a>直接映射缓存</h3><img src="/2024/09/19/CS61C/image-20240905142652532.png" class="" title="image-20240905142652532">
-
-<p>如上图，四个字节为一组且一个block是一个字节时，内存中一个字节存入缓存的位置只需看内存中地址最低两个有效位的值mod4即可找到！<br>但是可以发现，我们这样确实把内存中的字节复制到了缓存中，但是我们并不知道缓存中蓝色区域存储的那个字节是内存中哪一块蓝色的字节！</p>
+<h3 id="内存层次结构（宽泛的内存）">内存层次结构（宽泛的内存）</h3>
+<p>寄存器 &lt;— 缓存 &lt;— 内存 &lt;— 磁盘</p>
+<h3 id="Cache的设计原则">Cache的设计原则</h3>
+<h4 id="时间局部性">时间局部性</h4>
+<p>如果我最近使用过它，我很可能很快就会再次使用它</p>
+<h4 id="空间局部性">空间局部性</h4>
+<p>如果我访问了某个内存位置，我很可能很快就会访问其邻居</p>
+<h1>23. Caches-2</h1>
+<h3 id="直接映射缓存">直接映射缓存</h3>
+<img src="/2024/09/19/CS61C/image-20240905142652532.png" class="" title="image-20240905142652532">
+<p>如上图，四个字节为一组且一个block是一个字节时，内存中一个字节存入缓存的位置只需看内存中地址最低两个有效位的值mod4即可找到！<br>
+但是可以发现，我们这样确实把内存中的字节复制到了缓存中，但是我们并不知道缓存中蓝色区域存储的那个字节是内存中哪一块蓝色的字节！</p>
 <p><strong>缓存中持有数据的单位称为block，一个block可能是一个字节，也可能是多个</strong></p>
-<h4 id="Block的宽度大于一个字节时"><a href="#Block的宽度大于一个字节时" class="headerlink" title="Block的宽度大于一个字节时"></a>Block的宽度大于一个字节时</h4><img src="/2024/09/19/CS61C/image-20240905144103936.png" class="" title="image-20240905144103936">
-
-<p>我们在缓存中加入一个tag标签，用来指示同样映射到缓存中蓝色区域的block是内存中的哪一块block<br>那么这个tag符合什么规范呢？</p>
-<p>tag为了简洁，指定如下：<br>将cache的大小搬入内存中，以cache大小完全划分所有内存，然后从0开始编号如上图黄色的0，1，2，3<br>每一cache大小的内存区域对应在cache里的编号即为划分的编号！</p>
+<h4 id="Block的宽度大于一个字节时">Block的宽度大于一个字节时</h4>
+<img src="/2024/09/19/CS61C/image-20240905144103936.png" class="" title="image-20240905144103936">
+<p>我们在缓存中加入一个tag标签，用来指示同样映射到缓存中蓝色区域的block是内存中的哪一块block<br>
+那么这个tag符合什么规范呢？</p>
+<p>tag为了简洁，指定如下：<br>
+将cache的大小搬入内存中，以cache大小完全划分所有内存，然后从0开始编号如上图黄色的0，1，2，3<br>
+每一cache大小的内存区域对应在cache里的编号即为划分的编号！</p>
 <p>然后，找到在一个tag里的数据，我们还需要确定该数据在cache中的第几行（蓝色？红色？黄色行？）第几列（左边还是右边？）</p>
-<p>行数的确定我们称为index<br>列数的确定我们称为offset<br>cache映射宏观区域的确定我们称为tag</p>
+<p>行数的确定我们称为index<br>
+列数的确定我们称为offset<br>
+cache映射宏观区域的确定我们称为tag</p>
 <img src="/2024/09/19/CS61C/image-20240905145329662.png" class="" title="image-20240905145329662">
-
 <img src="/2024/09/19/CS61C/image-20240905145809443.png" class="" title="image-20240905145809443">
-
-<p>最低位的集合，即index和offset决定了Area<br>offset告诉了我们Area的width，index告诉了我们Area的height<br>offset = 一个block所包含的字节的数量（一个offset对应一个byte）<br>index = block的数量（一个index对应一个block）</p>
-<p>可见index * offset = Area = 该cache中数据所对应的字节地址数！<br>再通过该cache的tag确定区域，即可知道该地址的绝对位置！</p>
-<p><strong>32位指令集架构机器Cache的约定：</strong><br>一个block有两个字节，因此offset需要一位来确定<br>一个cache区域占有8bytes，因此需要四行，即四个index，因此index需要两位来确定<br>剩下29位即确定tag</p>
-<h3 id="访问内存的实际流程"><a href="#访问内存的实际流程" class="headerlink" title="访问内存的实际流程"></a>访问内存的实际流程</h3><p>发送内存访问指令，首先来到缓存，检查缓存是否持有该地址的copy，如果有立即返回<br>如果没有，则向内存地址发送请求，获取到地址上的数据后，将这一数据所在的一整个block都送回给缓存，缓存再返还给寄存器</p>
-<h3 id="Cache相关术语"><a href="#Cache相关术语" class="headerlink" title="Cache相关术语"></a>Cache相关术语</h3><h4 id="cache命中"><a href="#cache命中" class="headerlink" title="cache命中"></a>cache命中</h4><p>访问内存数据时，该数据刚好在cache中</p>
-<h3 id="cache未命中"><a href="#cache未命中" class="headerlink" title="cache未命中"></a>cache未命中</h3><p>cache中那块内存为空</p>
-<h3 id="cache未命中且块替换"><a href="#cache未命中且块替换" class="headerlink" title="cache未命中且块替换"></a>cache未命中且块替换</h3><p>cache那个地方有数据，但并非我需要的数据</p>
-<h3 id="cache命中率"><a href="#cache命中率" class="headerlink" title="cache命中率"></a>cache命中率</h3><p>cache命中的次数占总内存请求次数的比例</p>
-<h3 id="未命中惩罚"><a href="#未命中惩罚" class="headerlink" title="未命中惩罚"></a>未命中惩罚</h3><p>从内存中获取数据来替换cache中block的时间称为未命中惩罚</p>
-<h3 id="命中时间"><a href="#命中时间" class="headerlink" title="命中时间"></a>命中时间</h3><p>访问缓存所需要的时间</p>
-<h3 id=""><a href="#" class="headerlink" title="$"></a>$</h3><p>$ 被视为cache的符号记号</p>
-<h3 id="cache的有效位"><a href="#cache的有效位" class="headerlink" title="cache的有效位"></a>cache的有效位</h3><p>在tag的最高一位设置成有效位<br>该位为0时，表示cache中该内存是垃圾数据，永远不会被命中<br>为1时，表示该内存已被填入有效数据了，有可能被命中？</p>
-<h1 id="24-Cache-3"><a href="#24-Cache-3" class="headerlink" title="24. Cache-3"></a>24. Cache-3</h1><h3 id="访问Cache的过程示例——读取数据"><a href="#访问Cache的过程示例——读取数据" class="headerlink" title="访问Cache的过程示例——读取数据"></a>访问Cache的过程示例——读取数据</h3><p>有一个block为4个word即16字节宽的，10个index高的cache<br>我们要访问的内存地址为 下图顶部的地址</p>
+<p>最低位的集合，即index和offset决定了Area<br>
+offset告诉了我们Area的width，index告诉了我们Area的height<br>
+offset = 一个block所包含的字节的数量（一个offset对应一个byte）<br>
+index = block的数量（一个index对应一个block）</p>
+<p>可见index * offset = Area = 该cache中数据所对应的字节地址数！<br>
+再通过该cache的tag确定区域，即可知道该地址的绝对位置！</p>
+<p><strong>32位指令集架构机器Cache的约定：</strong><br>
+一个block有两个字节，因此offset需要一位来确定<br>
+一个cache区域占有8bytes，因此需要四行，即四个index，因此index需要两位来确定<br>
+剩下29位即确定tag</p>
+<h3 id="访问内存的实际流程">访问内存的实际流程</h3>
+<p>发送内存访问指令，首先来到缓存，检查缓存是否持有该地址的copy，如果有立即返回<br>
+如果没有，则向内存地址发送请求，获取到地址上的数据后，将这一数据所在的一整个block都送回给缓存，缓存再返还给寄存器</p>
+<h3 id="Cache相关术语">Cache相关术语</h3>
+<h4 id="cache命中">cache命中</h4>
+<p>访问内存数据时，该数据刚好在cache中</p>
+<h3 id="cache未命中">cache未命中</h3>
+<p>cache中那块内存为空</p>
+<h3 id="cache未命中且块替换">cache未命中且块替换</h3>
+<p>cache那个地方有数据，但并非我需要的数据</p>
+<h3 id="cache命中率">cache命中率</h3>
+<p>cache命中的次数占总内存请求次数的比例</p>
+<h3 id="未命中惩罚">未命中惩罚</h3>
+<p>从内存中获取数据来替换cache中block的时间称为未命中惩罚</p>
+<h3 id="命中时间">命中时间</h3>
+<p>访问缓存所需要的时间</p>
+<h3 id="">$</h3>
+<p>$ 被视为cache的符号记号</p>
+<h3 id="cache的有效位">cache的有效位</h3>
+<p>在tag的最高一位设置成有效位<br>
+该位为0时，表示cache中该内存是垃圾数据，永远不会被命中<br>
+为1时，表示该内存已被填入有效数据了，有可能被命中？</p>
+<h1>24. Cache-3</h1>
+<h3 id="访问Cache的过程示例——读取数据">访问Cache的过程示例——读取数据</h3>
+<p>有一个block为4个word即16字节宽的，10个index高的cache<br>
+我们要访问的内存地址为 下图顶部的地址</p>
 <img src="/2024/09/19/CS61C/image-20240906143929961.png" class="" title="image-20240906143929961">
-
 <p><strong>查找的顺序为：Index -&gt; Valid -&gt; Tag -&gt; Offset</strong> 即 IVTO</p>
-<p>先看index是什么，确定在cache的第几行，接着看最高的有效位是0还是1确定是热缓存还是冷缓存。<br>如果是0，则立刻到实际内存地址中取出该地址所在的<strong>一整个block的数据（也就是16字节数据）</strong>并加载存储在cache对应位置中，更新cache中的tag，把此index行有效位设置为1，再根据offset的值把cache中刚刚存储的数据返回</p>
+<p>先看index是什么，确定在cache的第几行，接着看最高的有效位是0还是1确定是热缓存还是冷缓存。<br>
+如果是0，则立刻到实际内存地址中取出该地址所在的**一整个block的数据（也就是16字节数据）**并加载存储在cache对应位置中，更新cache中的tag，把此index行有效位设置为1，再根据offset的值把cache中刚刚存储的数据返回</p>
 <p>如果有效位是1，如上图情况，则执行IVTO的T，查看Cache中该index数据的tag是不是跟我要访问的内存地址相匹配，此处匹配，那么查询offset找到cache中的数据并返回</p>
-<p>如果index步骤找到了cache中的一行，且valid有效位为1，如下图，但是tag发现不匹配<br>那么说明cache中存在这一行的数据需要被替换<br>执行缓存未命中且块替换操作，访问内存实际地址把一整块block存入cache的这一行<br>更新cache中的tag等信息</p>
+<p>如果index步骤找到了cache中的一行，且valid有效位为1，如下图，但是tag发现不匹配<br>
+那么说明cache中存在这一行的数据需要被替换<br>
+执行缓存未命中且块替换操作，访问内存实际地址把一整块block存入cache的这一行<br>
+更新cache中的tag等信息</p>
 <img src="/2024/09/19/CS61C/image-20240906144607983.png" class="" title="image-20240906144607983">
-
-<h3 id="写入数据时cache和内存发生了什么"><a href="#写入数据时cache和内存发生了什么" class="headerlink" title="写入数据时cache和内存发生了什么"></a>写入数据时cache和内存发生了什么</h3><p>如果要对同一个内存地址读取，写入，读取，再写入，再读取<br>如果每次写入都要既更新cache又去更新实际内存地址中的数据，那么这个操作将会非常低效<br>因此我们对写入更新做一些优化！</p>
+<h3 id="写入数据时cache和内存发生了什么">写入数据时cache和内存发生了什么</h3>
+<p>如果要对同一个内存地址读取，写入，读取，再写入，再读取<br>
+如果每次写入都要既更新cache又去更新实际内存地址中的数据，那么这个操作将会非常低效<br>
+因此我们对写入更新做一些优化！</p>
 <p>该优化的思想就是<strong>更新cache中的内容，但是实际内存中的内容先不去修改！</strong></p>
-<h4 id="Dirty-bit-脏位"><a href="#Dirty-bit-脏位" class="headerlink" title="Dirty bit 脏位"></a>Dirty bit 脏位</h4><p>类似valid bit，我们加上一个dirty bit，该位为1时，表示cache中该block的数据和实际内存地址中对应block数据不相同！<br>当cache中dirty bit为1的block在被读取时需要进行块替换时，我们才被该block的数据写入到内存实际对应block中去！这样就可以保证我们的写入数据能够被成功写入且极大提高性能效率</p>
-<h3 id="Block的大小"><a href="#Block的大小" class="headerlink" title="Block的大小"></a>Block的大小</h3><p>如果block很小，那么我们的cache命中率将会降低<br>如果block很大，那么我们的未命中惩罚将会增加（未命中时付出的代价）</p>
+<h4 id="Dirty-bit-脏位">Dirty bit 脏位</h4>
+<p>类似valid bit，我们加上一个dirty bit，该位为1时，表示cache中该block的数据和实际内存地址中对应block数据不相同！<br>
+当cache中dirty bit为1的block在被读取时需要进行块替换时，我们才被该block的数据写入到内存实际对应block中去！这样就可以保证我们的写入数据能够被成功写入且极大提高性能效率</p>
+<h3 id="Block的大小">Block的大小</h3>
+<p>如果block很小，那么我们的cache命中率将会降低<br>
+如果block很大，那么我们的未命中惩罚将会增加（未命中时付出的代价）</p>
 <p>因此设计block大小，需要考虑这两个因素，通过相乘两者图像找到最低点</p>
 <img src="/2024/09/19/CS61C/image-20240906152028369.png" class="" title="image-20240906152028369">
-
-<h3 id="完全关联缓存"><a href="#完全关联缓存" class="headerlink" title="完全关联缓存"></a>完全关联缓存</h3><p>这种缓存下，我们不再记录一个block的index，只留下tag和offset<br>不保留index的好处是，原来有index时，会出现映射到相同index的不同tag的数据，这种情况发生时需要进行块替换操作</p>
+<h3 id="完全关联缓存">完全关联缓存</h3>
+<p>这种缓存下，我们不再记录一个block的index，只留下tag和offset<br>
+不保留index的好处是，原来有index时，会出现映射到相同index的不同tag的数据，这种情况发生时需要进行块替换操作</p>
 <p>现在，由于没有index，所以不会发生映射到同一个位置的情况，但是要实现完全关联缓存，缓存必须几乎无限大（足以存下整个内存的数据），显然这是一个理想状态。如果缓存不是无限大的，那么必然会发生同一个位置出现不同数据，但此时不同数据出现的原因是缓存不够大，因此这种cache未命中称为 容量未命中 （刚刚的块替换未命中称为冲突未命中）</p>
-<h1 id="25-Caches-4"><a href="#25-Caches-4" class="headerlink" title="25. Caches-4"></a>25. Caches-4</h1><h3 id="组相联缓存-Set-Associative-Caches"><a href="#组相联缓存-Set-Associative-Caches" class="headerlink" title="组相联缓存 Set-Associative Caches"></a>组相联缓存 Set-Associative Caches</h3><p>N路组相联缓存：每个set里面有N个block<br>原来的Tag，Offset含义不变，Index变成这里的set</p>
+<h1>25. Caches-4</h1>
+<h3 id="组相联缓存-Set-Associative-Caches">组相联缓存 Set-Associative Caches</h3>
+<p>N路组相联缓存：每个set里面有N个block<br>
+原来的Tag，Offset含义不变，Index变成这里的set</p>
 <p>在每个Index里，内存是完全关联缓存的形式</p>
 <p>一个大于1路的组相联缓存，既能够获得直接映射缓存的优势，也能够解决块替换未命中（冲突未命中）的低效问题！</p>
-<h3 id="块替换策略"><a href="#块替换策略" class="headerlink" title="块替换策略"></a>块替换策略</h3><p>LRU(Least Recently Used)——最久未使用位：<br>记录最近是否访问的cache位置，常见策略是<br>对于一个2路组相联缓存，index为0的set中，一个block有两个字节<br>如果第一次强制未命中为offset为0，则，第0字节被加载数据，且设置其LRU位为0<br>同时设置offset为1的LRU为1，表示其是最久未使用位</p>
+<h3 id="块替换策略">块替换策略</h3>
+<p>LRU(Least Recently Used)——最久未使用位：<br>
+记录最近是否访问的cache位置，常见策略是<br>
+对于一个2路组相联缓存，index为0的set中，一个block有两个字节<br>
+如果第一次强制未命中为offset为0，则，第0字节被加载数据，且设置其LRU位为0<br>
+同时设置offset为1的LRU为1，表示其是最久未使用位</p>
 <p>下次命中到此index时，会优先替换LRU为1的offset位置</p>
-<h3 id="平均访问时间"><a href="#平均访问时间" class="headerlink" title="平均访问时间"></a>平均访问时间</h3><p><strong>平均访问时间 = 命中时间 + 未命中率 * 未命中惩罚</strong></p>
-<h3 id="多级缓存"><a href="#多级缓存" class="headerlink" title="多级缓存"></a>多级缓存</h3><img src="/2024/09/19/CS61C/image-20240907132854005.png" class="" title="image-20240907132854005">
-
-<p>有了多级缓存后，<br>平均访问时间 = （L1命中时间 + L1未命中率 * L1未命中惩罚）<br>但是 L1未命中惩罚 = （L2命中时间 + L2未命中率 * L2未命中惩罚）<br>……<br>如此递归下去！</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://clouduooo.github.io">Clouduo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://clouduooo.github.io/2024/09/19/CS61C/">https://clouduooo.github.io/2024/09/19/CS61C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://clouduooo.github.io" target="_blank">Clouduoの博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/Clouduo.PNG" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/10/19/TA-Graphics/" title="技术美术百人计划-图形向笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">技术美术百人计划-图形向笔记</div></div></a></div><div class="next-post pull-right"><a href="/2023/10/19/MSC%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" title="MSC-GAMECLUB 游戏开发学习资源（持续更新...）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MSC-GAMECLUB 游戏开发学习资源（持续更新...）</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/Clouduo.PNG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Clouduo</div><div class="author-info__description">Clouduo很懒，并不想写任何描述</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Clouduooo" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/36218679?spm_id_from=333.1007.0.0" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">1. 数的表示与转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D%E6%89%A9%E5%B1%95%EF%BC%9A"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">二进制位扩展：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%EF%BC%9A"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">进制转换：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD%E6%AD%A3%E8%B4%9F%E8%BD%AC%E6%8D%A2%E7%9A%84Tricks%EF%BC%9A"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">二进制中正负转换的Tricks：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E7%A0%81%E5%8A%A0%E5%87%8F%E6%B3%95%E4%B8%AD%E7%9A%84%E6%BA%A2%E5%87%BA%E9%97%AE%E9%A2%98%EF%BC%9A%E5%90%8C%E7%AC%A6%E5%8F%B7%E7%9B%B8%E5%8A%A0%E5%87%8F%E4%BC%9A%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%BA%A2%E5%87%BA%EF%BC%88%E4%B8%8E%E6%97%A0%E7%AC%A6%E5%8F%B7%E4%B8%80%E6%A0%B7%EF%BC%89%EF%BC%8C%E5%BC%82%E5%8F%B7%E7%9B%B8%E5%8A%A0%E5%87%8F%E4%B8%80%E5%AE%9A%E4%B8%8D%E4%BC%9A%E6%BA%A2%E5%87%BA%EF%BC%81"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">补码加减法中的溢出问题：同符号相加减会可能会溢出（与无符号一样），异号相加减一定不会溢出！</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-C%E5%9F%BA%E7%A1%80"><span class="toc-number">2.</span> <span class="toc-text">2. C基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C%E7%9A%84%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">C的编译过程：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-C%E6%8C%87%E9%92%88%EF%BC%8C%E6%95%B0%E7%BB%84%EF%BC%8CStrings"><span class="toc-number">3.</span> <span class="toc-text">3. C指针，数组，Strings</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-C%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">4. C内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C%E7%9A%84%E4%B8%89%E4%B8%AA%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%EF%BC%9A"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">C的三个内存区域：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%9D%97%E7%9A%84%E7%BB%93%E6%9E%84%E5%92%8Cmalloc%E5%88%86%E9%85%8D%EF%BC%9A"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">内存块的结构和malloc分配：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-Floating-Point-%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">5. Floating Point 浮点数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Fixing-Point%E5%9B%BA%E5%AE%9A%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%B0%8F%E6%95%B0%E7%82%B9%E6%95%B0"><span class="toc-number">5.0.0.1.</span> <span class="toc-text">Fixing Point固定二进制小数点数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Floating-Point%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="toc-number">5.0.0.2.</span> <span class="toc-text">Floating Point浮点数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%95%B0%E5%AD%97"><span class="toc-number">5.0.0.3.</span> <span class="toc-text">特殊数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%88%8D%E5%85%A5"><span class="toc-number">5.0.0.4.</span> <span class="toc-text">舍入</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-RISC-V-%E7%AE%80%E4%BB%8B"><span class="toc-number">6.</span> <span class="toc-text">6. RISC-V 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8Register%E2%80%94%E2%80%94%E4%BD%8D%E4%BA%8E%E5%A4%84%E7%90%86%E5%99%A8%E5%86%85%E6%A0%B8%E4%B8%AD%E7%9A%84%E7%A1%AC%E4%BB%B6%E5%AF%B9%E8%B1%A1%EF%BC%8C%E6%95%B0%E9%87%8F%E6%9C%89%E9%99%90%E3%80%82%E5%AF%B9%E6%95%B0%E6%8D%AE%E7%9A%84%E6%93%8D%E4%BD%9C%E6%98%AF%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E4%B8%8A%E8%BF%9B%E8%A1%8C%E7%9A%84"><span class="toc-number">6.0.0.1.</span> <span class="toc-text">寄存器Register——位于处理器内核中的硬件对象，数量有限。对数据的操作是在寄存器的数据上进行的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%AB%AF%E5%BA%8F%E2%80%94%E2%80%94RISC-V%E9%81%B5%E5%BE%AA%E7%9A%84%E5%AD%97%E8%8A%82%E5%BA%8F"><span class="toc-number">6.0.0.2.</span> <span class="toc-text">小端序——RISC-V遵循的字节序</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-RISC-V-lw-sw-Decisions-I"><span class="toc-number">7.</span> <span class="toc-text">7. RISC-V: lw, sw, Decisions I</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8vs%E5%86%85%E5%AD%98"><span class="toc-number">7.0.0.1.</span> <span class="toc-text">寄存器vs内存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%B3%E7%AD%96%E7%9A%84%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%88%86%E6%94%AF%E6%8C%87%E4%BB%A4"><span class="toc-number">7.0.0.2.</span> <span class="toc-text">计算机决策的实现——分支指令</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-RISC-V-Decisions-II"><span class="toc-number">8.</span> <span class="toc-text">8. RISC-V: Decisions II</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E6%B1%87%E7%BC%96"><span class="toc-number">8.0.1.</span> <span class="toc-text">位运算的汇编</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8D%E4%B8%8E"><span class="toc-number">8.0.1.1.</span> <span class="toc-text">位与</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8D%E9%9D%9E"><span class="toc-number">8.0.1.2.</span> <span class="toc-text">位非</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8D%E7%A7%BB"><span class="toc-number">8.0.1.3.</span> <span class="toc-text">位移</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E5%92%8C%E6%89%A7%E8%A1%8C%E7%9A%84"><span class="toc-number">8.0.1.4.</span> <span class="toc-text">程序是如何存储和执行的</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E4%B8%8A%E7%89%B9%E6%80%A7"><span class="toc-number">8.0.2.</span> <span class="toc-text">汇编中的一些语法上特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E5%AF%84%E5%AD%98%E5%99%A8%E5%90%8D%E7%A7%B0Symbolic-Register-Names"><span class="toc-number">8.0.2.1.</span> <span class="toc-text">符号寄存器名称Symbolic Register Names</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4Pseudo-instructions"><span class="toc-number">8.0.2.2.</span> <span class="toc-text">伪指令Pseudo-instructions</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-RISC-V-Procedures"><span class="toc-number">9.</span> <span class="toc-text">9. RISC-V: Procedures</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RISC-V%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">9.0.1.</span> <span class="toc-text">RISC-V中的函数调用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RISC-V%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E7%9A%84%E8%A7%84%E8%8C%83%EF%BC%9A"><span class="toc-number">9.0.1.1.</span> <span class="toc-text">RISC-V函数调用的规范：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84%E6%A0%88"><span class="toc-number">9.0.1.2.</span> <span class="toc-text">汇编中的栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E4%BC%9A%E4%BA%A7%E7%94%9F%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-number">9.0.1.3.</span> <span class="toc-text">普通函数调用的过程中会产生的问题：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%87%BD%E6%95%B0"><span class="toc-number">9.0.1.4.</span> <span class="toc-text">嵌套函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%87%BD%E6%95%B0%E7%9A%84example%EF%BC%9A"><span class="toc-number">9.0.1.5.</span> <span class="toc-text">嵌套函数的example：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D-vs-%E6%B1%87%E7%BC%96%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-number">9.0.2.</span> <span class="toc-text">C内存分配 vs 汇编内存分配</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%EF%BC%9A"><span class="toc-number">9.0.2.1.</span> <span class="toc-text">C内存分配：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RISC-V%E6%8C%87%E4%BB%A4%E9%9B%86%E6%9E%B6%E6%9E%84%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93%EF%BC%81"><span class="toc-number">9.0.3.</span> <span class="toc-text">RISC-V指令集架构汇编语言总结！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4%EF%BC%9A"><span class="toc-number">9.0.3.1.</span> <span class="toc-text">基础指令：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-RISC-V-Instruction-Formats-I"><span class="toc-number">10.</span> <span class="toc-text">10. RISC-V: Instruction Formats I</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RISC-V%E6%8C%87%E4%BB%A4%E5%9C%A8%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD%E7%9A%84%E5%BA%95%E5%B1%82%E8%A1%A8%E7%A4%BA%E6%96%B9%E5%BC%8F"><span class="toc-number">10.0.0.1.</span> <span class="toc-text">RISC-V指令在二进制中的底层表示方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#R-Format-%E7%AE%97%E6%9C%AF%E5%92%8C%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%9A%84%E5%AF%84%E5%AD%98%E5%99%A8-%E5%AF%84%E5%AD%98%E5%99%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">10.0.0.2.</span> <span class="toc-text">R-Format 算术和逻辑运算的寄存器-寄存器指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#I-Format-%E7%AB%8B%E5%8D%B3%E6%95%B0%E6%8C%87%E4%BB%A4"><span class="toc-number">10.0.0.3.</span> <span class="toc-text">I-Format 立即数指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Load%E6%8C%87%E4%BB%A4"><span class="toc-number">10.0.0.4.</span> <span class="toc-text">Load指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#S-Format-%E5%AD%98%E5%82%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">10.0.0.5.</span> <span class="toc-text">S-Format 存储指令</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-RISC-V-Instruction-Formats-II"><span class="toc-number">11.</span> <span class="toc-text">11. RISC-V: Instruction Formats II</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#B-Format-%E5%88%86%E6%94%AF%E6%8C%87%E4%BB%A4"><span class="toc-number">11.0.1.</span> <span class="toc-text">B-Format 分支指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E6%8C%87%E4%BB%A4%E9%9B%86"><span class="toc-number">11.0.1.1.</span> <span class="toc-text">压缩指令集</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#U-Format-%E2%80%9CUpper-Immediate%E4%B8%8A%E9%83%A8%E7%AB%8B%E5%8D%B3%E6%95%B0%E2%80%9D-%E5%AF%B9%E9%95%BF%E7%AB%8B%E5%8D%B3%E6%95%B0%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-number">11.0.2.</span> <span class="toc-text">U-Format “Upper Immediate上部立即数” 对长立即数的处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E6%89%A9%E5%B1%95%E5%B8%A6%E6%9D%A5%E7%9A%84%E7%AB%8B%E5%8D%B3%E6%95%B0%E5%8A%A0%E6%B3%95%E9%97%AE%E9%A2%98%EF%BC%81"><span class="toc-number">11.0.2.1.</span> <span class="toc-text">符号扩展带来的立即数加法问题！</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%82%E7%94%A8%E4%BA%8E%E5%8A%A0%E8%BD%BD%E9%95%BF%E7%AB%8B%E5%8D%B3%E6%95%B0%E7%9A%84%E4%BC%AA%E6%8C%87%E4%BB%A4%E2%80%94%E2%80%94li-%EF%BC%88Load-Immediate%EF%BC%89"><span class="toc-number">11.0.2.2.</span> <span class="toc-text">适用于加载长立即数的伪指令——li  （Load Immediate）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#J-Format-jal%E6%8C%87%E4%BB%A4"><span class="toc-number">11.0.3.</span> <span class="toc-text">J-Format jal指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#jalr%E6%8C%87%E4%BB%A4-%E4%BD%BF%E7%94%A8I-Format%EF%BC%8C%E8%BF%99%E4%B8%AA%E6%8C%87%E4%BB%A4%E6%98%AF%E7%94%A8%E4%BA%8E%E8%B7%B3%E8%BD%AC%E5%88%B0%E7%BB%9D%E5%AF%B9%E5%9C%B0%E5%9D%80%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">11.0.3.1.</span> <span class="toc-text">jalr指令 使用I-Format，这个指令是用于跳转到绝对地址的方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RISC-V-Instruction-Formats-%E6%80%BB%E7%BB%93%EF%BC%81"><span class="toc-number">11.0.4.</span> <span class="toc-text">RISC-V Instruction Formats 总结！</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-CALL%E2%80%94%E2%80%94%E7%BC%96%E8%AF%91%EF%BC%8C%E6%B1%87%E7%BC%96%EF%BC%8C%E9%93%BE%E6%8E%A5%EF%BC%8C%E5%8A%A0%E8%BD%BD"><span class="toc-number">12.</span> <span class="toc-text">12. CALL——编译，汇编，链接，加载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BF%BB%E8%AF%91%E4%B8%8E%E8%A7%A3%E9%87%8A"><span class="toc-number">12.0.1.</span> <span class="toc-text">翻译与解释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E5%99%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AE%9E%E9%99%85%E4%BD%9C%E7%94%A8%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9F%E5%99%A8"><span class="toc-number">12.0.1.1.</span> <span class="toc-text">解释器的一些实际作用——模拟器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%EF%BC%9Amain-c-gt-main-s"><span class="toc-number">12.0.2.</span> <span class="toc-text">编译器：main.c -&gt; main.s</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E5%99%A8%EF%BC%9Amain-s-gt-main-o"><span class="toc-number">12.0.3.</span> <span class="toc-text">汇编器：main.s -&gt; main.o</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E4%BD%8D%E8%A1%A8Relocation-Table"><span class="toc-number">12.0.3.1.</span> <span class="toc-text">重定位表Relocation Table</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E8%A1%A8Symbol-Table"><span class="toc-number">12.0.3.2.</span> <span class="toc-text">符号表Symbol Table</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Object-File-Fromat%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6-o-%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-number">12.0.3.3.</span> <span class="toc-text">Object File Fromat目标文件.o 的格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E5%99%A8-main-o-XX-o-gt-a-out"><span class="toc-number">12.0.4.</span> <span class="toc-text">链接器: main.o + XX.o -&gt; a.out</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E7%A7%8D%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F"><span class="toc-number">12.0.4.1.</span> <span class="toc-text">四种寻址方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">12.0.4.2.</span> <span class="toc-text">静态链接与动态链接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E5%99%A8%EF%BC%9A"><span class="toc-number">12.0.5.</span> <span class="toc-text">加载器：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Example%EF%BC%9AHello-World"><span class="toc-number">12.0.6.</span> <span class="toc-text">Example：Hello World</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-%E5%90%8C%E6%AD%A5%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B"><span class="toc-number">13.</span> <span class="toc-text">13. 同步数字系统简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E9%97%A8%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">13.0.1.</span> <span class="toc-text">逻辑门的诞生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%B6%E4%BD%93%E7%AE%A1Transistor"><span class="toc-number">13.0.2.</span> <span class="toc-text">晶体管Transistor</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%85%E5%BD%93%E5%BC%80%E5%85%B3%E7%9A%84MOS%E6%99%B6%E4%BD%93%E7%AE%A1%E7%9A%84%E7%94%B5%E8%B7%AF%E5%9B%BE"><span class="toc-number">13.0.2.1.</span> <span class="toc-text">充当开关的MOS晶体管的电路图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8E%E9%9D%9E%E9%97%A8NAND-Gate-%E2%80%94%E2%80%94-%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%9D%A5%E6%9E%84%E5%BB%BA%E4%B8%8E%EF%BC%8C%E6%88%96%EF%BC%8C%E9%9D%9E%E9%97%A8"><span class="toc-number">13.0.2.2.</span> <span class="toc-text">与非门NAND Gate —— 可以用来构建与，或，非门</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E4%B8%8E%E6%B3%A2%E5%BD%A2"><span class="toc-number">13.0.3.</span> <span class="toc-text">信号与波形</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A0%E6%B3%95%E5%99%A8%E7%94%B5%E8%B7%AF"><span class="toc-number">13.0.3.1.</span> <span class="toc-text">加法器电路</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B7%A5%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%A4%E7%B1%BB%E7%94%B5%E8%B7%AF%EF%BC%88%E5%A4%A7%E7%B1%BB%EF%BC%89"><span class="toc-number">13.0.4.</span> <span class="toc-text">计算机工程中的两类电路（大类）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF"><span class="toc-number">13.0.4.1.</span> <span class="toc-text">组合逻辑电路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF%EF%BC%88%E7%8A%B6%E6%80%81%E7%94%B5%E8%B7%AF%EF%BC%89"><span class="toc-number">13.0.4.2.</span> <span class="toc-text">时序电路（状态电路）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF%EF%BC%88%E7%8A%B6%E6%80%81%E7%94%B5%E8%B7%AF%EF%BC%89"><span class="toc-number">14.</span> <span class="toc-text">14. 时序电路（状态电路）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%AF%E5%8A%A0%E5%99%A8"><span class="toc-number">14.0.1.</span> <span class="toc-text">累加器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">14.0.2.</span> <span class="toc-text">寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8%E2%80%94%E2%80%94%E4%B8%8A%E5%8D%87%E6%B2%BF%E8%A7%A6%E5%8F%91%E5%9E%8B%EF%BC%88%E6%84%8F%E5%91%B3%E7%9D%80%E5%9C%A8Clock%E6%97%B6%E9%92%9F%E4%BB%8E0%E5%88%B01%E7%9A%84%E6%97%B6%E5%80%99%E8%A2%AB%E8%A7%A6%E5%8F%91%EF%BC%89"><span class="toc-number">14.0.2.1.</span> <span class="toc-text">触发器——上升沿触发型（意味着在Clock时钟从0到1的时候被触发）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E9%A1%BE%E2%80%94%E2%80%94%E6%89%80%E6%9C%89%E6%97%B6%E9%97%B4%E5%BB%B6%E8%BF%9F%EF%BC%8C%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%8C%E8%A7%A6%E5%8F%91%E5%99%A8%E7%9B%B8%E5%85%B3%E7%9A%84%E5%90%8D%E8%AF%8D"><span class="toc-number">14.0.3.</span> <span class="toc-text">回顾——所有时间延迟，寄存器，触发器相关的名词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BAFSM"><span class="toc-number">14.0.4.</span> <span class="toc-text">有限状态机FSM</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF"><span class="toc-number">15.</span> <span class="toc-text">15. 组合逻辑电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8-Data-Multiplexors"><span class="toc-number">15.0.1.</span> <span class="toc-text">数据多路复用器 Data Multiplexors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83-Arithmetic-and-Logic-Unit-ALU"><span class="toc-number">15.0.2.</span> <span class="toc-text">算术逻辑单元 Arithmetic and Logic Unit (ALU)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#16-%E5%8D%95%E6%A0%B8CPU%E8%AE%BE%E8%AE%A1-1-%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF"><span class="toc-number">16.</span> <span class="toc-text">16. 单核CPU设计-1 数据通路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF-Data-Path"><span class="toc-number">16.0.1.</span> <span class="toc-text">数据通路 Data Path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6-Control"><span class="toc-number">16.0.2.</span> <span class="toc-text">控制 Control</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%9A%84%E5%87%A0%E4%B8%AA%E6%AD%A5%E9%AA%A4"><span class="toc-number">16.0.3.</span> <span class="toc-text">执行汇编指令的几个步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add%E6%8C%87%E4%BB%A4%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="toc-number">16.0.4.</span> <span class="toc-text">add指令的数据通路设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sub%E6%8C%87%E4%BB%A4%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="toc-number">16.0.5.</span> <span class="toc-text">sub指令的数据通路设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#addi-%E7%AB%8B%E5%8D%B3%E6%95%B0%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF"><span class="toc-number">16.0.6.</span> <span class="toc-text">addi 立即数加法指令的数据通路</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#17-%E5%8D%95%E6%A0%B8CPU%E8%AE%BE%E8%AE%A1-2-%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF"><span class="toc-number">17.</span> <span class="toc-text">17. 单核CPU设计-2 数据通路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#load-word%E6%8C%87%E4%BB%A4%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF"><span class="toc-number">17.0.1.</span> <span class="toc-text">load word指令的数据通路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81store-word%E6%8C%87%E4%BB%A4"><span class="toc-number">17.0.2.</span> <span class="toc-text">支持store word指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E5%88%86%E6%94%AF%E6%8C%87%E4%BB%A4"><span class="toc-number">17.0.3.</span> <span class="toc-text">支持分支指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81JALR-Jump-and-Link-Register%E6%8C%87%E4%BB%A4%E2%80%94%E2%80%94I-Format"><span class="toc-number">17.0.4.</span> <span class="toc-text">支持JALR Jump and Link Register指令——I-Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81JAL-Jump-and-Link%E6%8C%87%E4%BB%A4%E2%80%94%E2%80%94J-Format"><span class="toc-number">17.0.5.</span> <span class="toc-text">支持JAL Jump and Link指令——J-Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81U-Format%E2%80%94%E2%80%94%E9%95%BF%E7%AB%8B%E5%8D%B3%E6%95%B0"><span class="toc-number">17.0.6.</span> <span class="toc-text">支持U-Format——长立即数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RISC-V%E5%8D%95%E6%A0%B8CPU%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E6%80%BB%E5%9B%BE"><span class="toc-number">17.0.7.</span> <span class="toc-text">RISC-V单核CPU数据通路总图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#18-%E5%8D%95%E6%A0%B8CPU%E8%AE%BE%E8%AE%A1-3-%E6%8E%A7%E5%88%B6%E6%A8%A1%E5%9D%97"><span class="toc-number">18.</span> <span class="toc-text">18. 单核CPU设计-3 控制模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSR-%E2%80%94%E2%80%94Control-and-Status-Register"><span class="toc-number">18.0.1.</span> <span class="toc-text">CSR ——Control and Status Register</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%9A%84Timing"><span class="toc-number">18.0.2.</span> <span class="toc-text">指令的Timing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1"><span class="toc-number">18.0.3.</span> <span class="toc-text">控制逻辑设计</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#22-Caches-1"><span class="toc-number">19.</span> <span class="toc-text">22. Caches-1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%89%8D%E7%BC%80"><span class="toc-number">19.0.1.</span> <span class="toc-text">二进制前缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache%E5%87%BA%E7%8E%B0%E7%9A%84%E5%8E%9F%E5%9B%A0%E2%80%94%E2%80%94CPU%E9%80%9F%E5%BA%A6%E5%92%8C%E8%AE%BF%E9%97%AE%E5%86%85%E5%AD%98%E7%9A%84%E9%80%9F%E5%BA%A6%E7%9A%84%E5%B7%AE%E8%B7%9D%E9%97%AE%E9%A2%98"><span class="toc-number">19.0.2.</span> <span class="toc-text">Cache出现的原因——CPU速度和访问内存的速度的差距问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">19.0.3.</span> <span class="toc-text">Cache是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%EF%BC%88%E5%AE%BD%E6%B3%9B%E7%9A%84%E5%86%85%E5%AD%98%EF%BC%89"><span class="toc-number">19.0.4.</span> <span class="toc-text">内存层次结构（宽泛的内存）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-number">19.0.5.</span> <span class="toc-text">Cache的设计原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%B1%80%E9%83%A8%E6%80%A7"><span class="toc-number">19.0.5.1.</span> <span class="toc-text">时间局部性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%B1%80%E9%83%A8%E6%80%A7"><span class="toc-number">19.0.5.2.</span> <span class="toc-text">空间局部性</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#23-Caches-2"><span class="toc-number">20.</span> <span class="toc-text">23. Caches-2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84%E7%BC%93%E5%AD%98"><span class="toc-number">20.0.1.</span> <span class="toc-text">直接映射缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Block%E7%9A%84%E5%AE%BD%E5%BA%A6%E5%A4%A7%E4%BA%8E%E4%B8%80%E4%B8%AA%E5%AD%97%E8%8A%82%E6%97%B6"><span class="toc-number">20.0.1.1.</span> <span class="toc-text">Block的宽度大于一个字节时</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%86%85%E5%AD%98%E7%9A%84%E5%AE%9E%E9%99%85%E6%B5%81%E7%A8%8B"><span class="toc-number">20.0.2.</span> <span class="toc-text">访问内存的实际流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD"><span class="toc-number">20.0.3.</span> <span class="toc-text">Cache相关术语</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cache%E5%91%BD%E4%B8%AD"><span class="toc-number">20.0.3.1.</span> <span class="toc-text">cache命中</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E6%9C%AA%E5%91%BD%E4%B8%AD"><span class="toc-number">20.0.4.</span> <span class="toc-text">cache未命中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E6%9C%AA%E5%91%BD%E4%B8%AD%E4%B8%94%E5%9D%97%E6%9B%BF%E6%8D%A2"><span class="toc-number">20.0.5.</span> <span class="toc-text">cache未命中且块替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E5%91%BD%E4%B8%AD%E7%8E%87"><span class="toc-number">20.0.6.</span> <span class="toc-text">cache命中率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AA%E5%91%BD%E4%B8%AD%E6%83%A9%E7%BD%9A"><span class="toc-number">20.0.7.</span> <span class="toc-text">未命中惩罚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%B8%AD%E6%97%B6%E9%97%B4"><span class="toc-number">20.0.8.</span> <span class="toc-text">命中时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">20.0.9.</span> <span class="toc-text">$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E7%9A%84%E6%9C%89%E6%95%88%E4%BD%8D"><span class="toc-number">20.0.10.</span> <span class="toc-text">cache的有效位</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#24-Cache-3"><span class="toc-number">21.</span> <span class="toc-text">24. Cache-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AECache%E7%9A%84%E8%BF%87%E7%A8%8B%E7%A4%BA%E4%BE%8B%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-number">21.0.1.</span> <span class="toc-text">访问Cache的过程示例——读取数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE%E6%97%B6cache%E5%92%8C%E5%86%85%E5%AD%98%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-number">21.0.2.</span> <span class="toc-text">写入数据时cache和内存发生了什么</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Dirty-bit-%E8%84%8F%E4%BD%8D"><span class="toc-number">21.0.2.1.</span> <span class="toc-text">Dirty bit 脏位</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Block%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="toc-number">21.0.3.</span> <span class="toc-text">Block的大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E5%85%B3%E8%81%94%E7%BC%93%E5%AD%98"><span class="toc-number">21.0.4.</span> <span class="toc-text">完全关联缓存</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#25-Caches-4"><span class="toc-number">22.</span> <span class="toc-text">25. Caches-4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E7%9B%B8%E8%81%94%E7%BC%93%E5%AD%98-Set-Associative-Caches"><span class="toc-number">22.0.1.</span> <span class="toc-text">组相联缓存 Set-Associative Caches</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E6%9B%BF%E6%8D%A2%E7%AD%96%E7%95%A5"><span class="toc-number">22.0.2.</span> <span class="toc-text">块替换策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E5%9D%87%E8%AE%BF%E9%97%AE%E6%97%B6%E9%97%B4"><span class="toc-number">22.0.3.</span> <span class="toc-text">平均访问时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98"><span class="toc-number">22.0.4.</span> <span class="toc-text">多级缓存</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/19/Clouduo-Demo/" title="Clouduo作品集">Clouduo作品集</a><time datetime="2024-10-18T16:00:00.000Z" title="发表于 2024-10-19 00:00:00">2024-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/19/TA-Graphics/" title="技术美术百人计划-图形向笔记">技术美术百人计划-图形向笔记</a><time datetime="2024-10-18T16:00:00.000Z" title="发表于 2024-10-19 00:00:00">2024-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/19/CS61C/" title="CS61C-笔记">CS61C-笔记</a><time datetime="2024-09-18T16:00:00.000Z" title="发表于 2024-09-19 00:00:00">2024-09-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/19/MSC%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" title="MSC-GAMECLUB 游戏开发学习资源（持续更新...）">MSC-GAMECLUB 游戏开发学习资源（持续更新...）</a><time datetime="2023-10-18T16:00:00.000Z" title="发表于 2023-10-19 00:00:00">2023-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/12/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8C%E5%B0%8FTips%EF%BC%88%E6%8C%81%E7%BB%AD%E5%A1%AB%E5%9D%91...%EF%BC%89/" title="Git常用命令和小Tips">Git常用命令和小Tips</a><time datetime="2023-04-11T16:00:00.000Z" title="发表于 2023-04-12 00:00:00">2023-04-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Clouduo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+<h3 id="平均访问时间">平均访问时间</h3>
+<p><strong>平均访问时间 = 命中时间 + 未命中率 * 未命中惩罚</strong></p>
+<h3 id="多级缓存">多级缓存</h3>
+<img src="/2024/09/19/CS61C/image-20240907132854005.png" class="" title="image-20240907132854005">
+<p>有了多级缓存后，<br>
+平均访问时间 = （L1命中时间 + L1未命中率 * L1未命中惩罚）<br>
+但是 L1未命中惩罚 = （L2命中时间 + L2未命中率 * L2未命中惩罚）<br>
+…<br>
+如此递归下去！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://clouduooo.github.io">Clouduo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://clouduooo.github.io/2024/09/19/CS61C/">https://clouduooo.github.io/2024/09/19/CS61C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://clouduooo.github.io" target="_blank">Clouduoの博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/Clouduo.PNG" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/10/19/TA-Graphics/" title="技术美术百人计划-图形向笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">技术美术百人计划-图形向笔记</div></div></a></div><div class="next-post pull-right"><a href="/2023/10/19/MSC%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" title="MSC-GAMECLUB 游戏开发学习资源（持续更新...）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MSC-GAMECLUB 游戏开发学习资源（持续更新...）</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/Clouduo.PNG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Clouduo</div><div class="author-info__description">Clouduo很懒，并不想写任何描述</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Clouduooo" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/36218679?spm_id_from=333.1007.0.0" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">1. 数的表示与转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D%E6%89%A9%E5%B1%95%EF%BC%9A"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">二进制位扩展：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%EF%BC%9A"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">进制转换：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD%E6%AD%A3%E8%B4%9F%E8%BD%AC%E6%8D%A2%E7%9A%84Tricks%EF%BC%9A"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">二进制中正负转换的Tricks：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E7%A0%81%E5%8A%A0%E5%87%8F%E6%B3%95%E4%B8%AD%E7%9A%84%E6%BA%A2%E5%87%BA%E9%97%AE%E9%A2%98%EF%BC%9A%E5%90%8C%E7%AC%A6%E5%8F%B7%E7%9B%B8%E5%8A%A0%E5%87%8F%E4%BC%9A%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%BA%A2%E5%87%BA%EF%BC%88%E4%B8%8E%E6%97%A0%E7%AC%A6%E5%8F%B7%E4%B8%80%E6%A0%B7%EF%BC%89%EF%BC%8C%E5%BC%82%E5%8F%B7%E7%9B%B8%E5%8A%A0%E5%87%8F%E4%B8%80%E5%AE%9A%E4%B8%8D%E4%BC%9A%E6%BA%A2%E5%87%BA%EF%BC%81"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">补码加减法中的溢出问题：同符号相加减会可能会溢出（与无符号一样），异号相加减一定不会溢出！</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">2. C基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C%E7%9A%84%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">C的编译过程：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">3. C指针，数组，Strings</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">4. C内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C%E7%9A%84%E4%B8%89%E4%B8%AA%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%EF%BC%9A"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">C的三个内存区域：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%9D%97%E7%9A%84%E7%BB%93%E6%9E%84%E5%92%8Cmalloc%E5%88%86%E9%85%8D%EF%BC%9A"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">内存块的结构和malloc分配：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">5. Floating Point 浮点数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Fixing-Point%E5%9B%BA%E5%AE%9A%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%B0%8F%E6%95%B0%E7%82%B9%E6%95%B0"><span class="toc-number">5.0.0.1.</span> <span class="toc-text">Fixing Point固定二进制小数点数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Floating-Point%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="toc-number">5.0.0.2.</span> <span class="toc-text">Floating Point浮点数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%95%B0%E5%AD%97"><span class="toc-number">5.0.0.3.</span> <span class="toc-text">特殊数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%88%8D%E5%85%A5"><span class="toc-number">5.0.0.4.</span> <span class="toc-text">舍入</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">6. RISC-V 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8Register%E2%80%94%E2%80%94%E4%BD%8D%E4%BA%8E%E5%A4%84%E7%90%86%E5%99%A8%E5%86%85%E6%A0%B8%E4%B8%AD%E7%9A%84%E7%A1%AC%E4%BB%B6%E5%AF%B9%E8%B1%A1%EF%BC%8C%E6%95%B0%E9%87%8F%E6%9C%89%E9%99%90%E3%80%82%E5%AF%B9%E6%95%B0%E6%8D%AE%E7%9A%84%E6%93%8D%E4%BD%9C%E6%98%AF%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E4%B8%8A%E8%BF%9B%E8%A1%8C%E7%9A%84"><span class="toc-number">6.0.0.1.</span> <span class="toc-text">寄存器Register——位于处理器内核中的硬件对象，数量有限。对数据的操作是在寄存器的数据上进行的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%AB%AF%E5%BA%8F%E2%80%94%E2%80%94RISC-V%E9%81%B5%E5%BE%AA%E7%9A%84%E5%AD%97%E8%8A%82%E5%BA%8F"><span class="toc-number">6.0.0.2.</span> <span class="toc-text">小端序——RISC-V遵循的字节序</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">7. RISC-V: lw, sw, Decisions I</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8vs%E5%86%85%E5%AD%98"><span class="toc-number">7.0.0.1.</span> <span class="toc-text">寄存器vs内存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%B3%E7%AD%96%E7%9A%84%E5%AE%9E%E7%8E%B0%E2%80%94%E2%80%94%E5%88%86%E6%94%AF%E6%8C%87%E4%BB%A4"><span class="toc-number">7.0.0.2.</span> <span class="toc-text">计算机决策的实现——分支指令</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">8. RISC-V: Decisions II</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E6%B1%87%E7%BC%96"><span class="toc-number">8.0.1.</span> <span class="toc-text">位运算的汇编</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8D%E4%B8%8E"><span class="toc-number">8.0.1.1.</span> <span class="toc-text">位与</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8D%E9%9D%9E"><span class="toc-number">8.0.1.2.</span> <span class="toc-text">位非</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8D%E7%A7%BB"><span class="toc-number">8.0.1.3.</span> <span class="toc-text">位移</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E5%92%8C%E6%89%A7%E8%A1%8C%E7%9A%84"><span class="toc-number">8.0.1.4.</span> <span class="toc-text">程序是如何存储和执行的</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%AD%E6%B3%95%E4%B8%8A%E7%89%B9%E6%80%A7"><span class="toc-number">8.0.2.</span> <span class="toc-text">汇编中的一些语法上特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E5%AF%84%E5%AD%98%E5%99%A8%E5%90%8D%E7%A7%B0Symbolic-Register-Names"><span class="toc-number">8.0.2.1.</span> <span class="toc-text">符号寄存器名称Symbolic Register Names</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4Pseudo-instructions"><span class="toc-number">8.0.2.2.</span> <span class="toc-text">伪指令Pseudo-instructions</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">9. RISC-V: Procedures</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RISC-V%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">9.0.1.</span> <span class="toc-text">RISC-V中的函数调用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RISC-V%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E7%9A%84%E8%A7%84%E8%8C%83%EF%BC%9A"><span class="toc-number">9.0.1.1.</span> <span class="toc-text">RISC-V函数调用的规范：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E4%B8%AD%E7%9A%84%E6%A0%88"><span class="toc-number">9.0.1.2.</span> <span class="toc-text">汇编中的栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E4%BC%9A%E4%BA%A7%E7%94%9F%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-number">9.0.1.3.</span> <span class="toc-text">普通函数调用的过程中会产生的问题：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%87%BD%E6%95%B0"><span class="toc-number">9.0.1.4.</span> <span class="toc-text">嵌套函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%87%BD%E6%95%B0%E7%9A%84example%EF%BC%9A"><span class="toc-number">9.0.1.5.</span> <span class="toc-text">嵌套函数的example：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D-vs-%E6%B1%87%E7%BC%96%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-number">9.0.2.</span> <span class="toc-text">C内存分配 vs 汇编内存分配</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%EF%BC%9A"><span class="toc-number">9.0.2.1.</span> <span class="toc-text">C内存分配：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RISC-V%E6%8C%87%E4%BB%A4%E9%9B%86%E6%9E%B6%E6%9E%84%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93%EF%BC%81"><span class="toc-number">9.0.3.</span> <span class="toc-text">RISC-V指令集架构汇编语言总结！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4%EF%BC%9A"><span class="toc-number">9.0.3.1.</span> <span class="toc-text">基础指令：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text">10. RISC-V: Instruction Formats I</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RISC-V%E6%8C%87%E4%BB%A4%E5%9C%A8%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD%E7%9A%84%E5%BA%95%E5%B1%82%E8%A1%A8%E7%A4%BA%E6%96%B9%E5%BC%8F"><span class="toc-number">10.0.0.1.</span> <span class="toc-text">RISC-V指令在二进制中的底层表示方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#R-Format-%E7%AE%97%E6%9C%AF%E5%92%8C%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%9A%84%E5%AF%84%E5%AD%98%E5%99%A8-%E5%AF%84%E5%AD%98%E5%99%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">10.0.0.2.</span> <span class="toc-text">R-Format 算术和逻辑运算的寄存器-寄存器指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#I-Format-%E7%AB%8B%E5%8D%B3%E6%95%B0%E6%8C%87%E4%BB%A4"><span class="toc-number">10.0.0.3.</span> <span class="toc-text">I-Format 立即数指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Load%E6%8C%87%E4%BB%A4"><span class="toc-number">10.0.0.4.</span> <span class="toc-text">Load指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#S-Format-%E5%AD%98%E5%82%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">10.0.0.5.</span> <span class="toc-text">S-Format 存储指令</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">11.</span> <span class="toc-text">11. RISC-V: Instruction Formats II</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#B-Format-%E5%88%86%E6%94%AF%E6%8C%87%E4%BB%A4"><span class="toc-number">11.0.1.</span> <span class="toc-text">B-Format 分支指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E6%8C%87%E4%BB%A4%E9%9B%86"><span class="toc-number">11.0.1.1.</span> <span class="toc-text">压缩指令集</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#U-Format-%E2%80%9CUpper-Immediate%E4%B8%8A%E9%83%A8%E7%AB%8B%E5%8D%B3%E6%95%B0%E2%80%9D-%E5%AF%B9%E9%95%BF%E7%AB%8B%E5%8D%B3%E6%95%B0%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-number">11.0.2.</span> <span class="toc-text">U-Format “Upper Immediate上部立即数” 对长立即数的处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E6%89%A9%E5%B1%95%E5%B8%A6%E6%9D%A5%E7%9A%84%E7%AB%8B%E5%8D%B3%E6%95%B0%E5%8A%A0%E6%B3%95%E9%97%AE%E9%A2%98%EF%BC%81"><span class="toc-number">11.0.2.1.</span> <span class="toc-text">符号扩展带来的立即数加法问题！</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%82%E7%94%A8%E4%BA%8E%E5%8A%A0%E8%BD%BD%E9%95%BF%E7%AB%8B%E5%8D%B3%E6%95%B0%E7%9A%84%E4%BC%AA%E6%8C%87%E4%BB%A4%E2%80%94%E2%80%94li-%EF%BC%88Load-Immediate%EF%BC%89"><span class="toc-number">11.0.2.2.</span> <span class="toc-text">适用于加载长立即数的伪指令——li  （Load Immediate）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#J-Format-jal%E6%8C%87%E4%BB%A4"><span class="toc-number">11.0.3.</span> <span class="toc-text">J-Format jal指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#jalr%E6%8C%87%E4%BB%A4-%E4%BD%BF%E7%94%A8I-Format%EF%BC%8C%E8%BF%99%E4%B8%AA%E6%8C%87%E4%BB%A4%E6%98%AF%E7%94%A8%E4%BA%8E%E8%B7%B3%E8%BD%AC%E5%88%B0%E7%BB%9D%E5%AF%B9%E5%9C%B0%E5%9D%80%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">11.0.3.1.</span> <span class="toc-text">jalr指令 使用I-Format，这个指令是用于跳转到绝对地址的方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RISC-V-Instruction-Formats-%E6%80%BB%E7%BB%93%EF%BC%81"><span class="toc-number">11.0.4.</span> <span class="toc-text">RISC-V Instruction Formats 总结！</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">12.</span> <span class="toc-text">12. CALL——编译，汇编，链接，加载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BF%BB%E8%AF%91%E4%B8%8E%E8%A7%A3%E9%87%8A"><span class="toc-number">12.0.1.</span> <span class="toc-text">翻译与解释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E5%99%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AE%9E%E9%99%85%E4%BD%9C%E7%94%A8%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9F%E5%99%A8"><span class="toc-number">12.0.1.1.</span> <span class="toc-text">解释器的一些实际作用——模拟器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%EF%BC%9Amain-c-main-s"><span class="toc-number">12.0.2.</span> <span class="toc-text">编译器：main.c -&gt; main.s</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E5%99%A8%EF%BC%9Amain-s-main-o"><span class="toc-number">12.0.3.</span> <span class="toc-text">汇编器：main.s -&gt; main.o</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E4%BD%8D%E8%A1%A8Relocation-Table"><span class="toc-number">12.0.3.1.</span> <span class="toc-text">重定位表Relocation Table</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E8%A1%A8Symbol-Table"><span class="toc-number">12.0.3.2.</span> <span class="toc-text">符号表Symbol Table</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Object-File-Fromat%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6-o-%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-number">12.0.3.3.</span> <span class="toc-text">Object File Fromat目标文件.o 的格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E5%99%A8-main-o-XX-o-a-out"><span class="toc-number">12.0.4.</span> <span class="toc-text">链接器: main.o + XX.o -&gt; a.out</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E7%A7%8D%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F"><span class="toc-number">12.0.4.1.</span> <span class="toc-text">四种寻址方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">12.0.4.2.</span> <span class="toc-text">静态链接与动态链接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E5%99%A8%EF%BC%9A"><span class="toc-number">12.0.5.</span> <span class="toc-text">加载器：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Example%EF%BC%9AHello-World"><span class="toc-number">12.0.6.</span> <span class="toc-text">Example：Hello World</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">13.</span> <span class="toc-text">13. 同步数字系统简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E9%97%A8%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">13.0.1.</span> <span class="toc-text">逻辑门的诞生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%B6%E4%BD%93%E7%AE%A1Transistor"><span class="toc-number">13.0.2.</span> <span class="toc-text">晶体管Transistor</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%85%E5%BD%93%E5%BC%80%E5%85%B3%E7%9A%84MOS%E6%99%B6%E4%BD%93%E7%AE%A1%E7%9A%84%E7%94%B5%E8%B7%AF%E5%9B%BE"><span class="toc-number">13.0.2.1.</span> <span class="toc-text">充当开关的MOS晶体管的电路图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8E%E9%9D%9E%E9%97%A8NAND-Gate-%E2%80%94%E2%80%94-%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%9D%A5%E6%9E%84%E5%BB%BA%E4%B8%8E%EF%BC%8C%E6%88%96%EF%BC%8C%E9%9D%9E%E9%97%A8"><span class="toc-number">13.0.2.2.</span> <span class="toc-text">与非门NAND Gate —— 可以用来构建与，或，非门</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E4%B8%8E%E6%B3%A2%E5%BD%A2"><span class="toc-number">13.0.3.</span> <span class="toc-text">信号与波形</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A0%E6%B3%95%E5%99%A8%E7%94%B5%E8%B7%AF"><span class="toc-number">13.0.3.1.</span> <span class="toc-text">加法器电路</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B7%A5%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%A4%E7%B1%BB%E7%94%B5%E8%B7%AF%EF%BC%88%E5%A4%A7%E7%B1%BB%EF%BC%89"><span class="toc-number">13.0.4.</span> <span class="toc-text">计算机工程中的两类电路（大类）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF"><span class="toc-number">13.0.4.1.</span> <span class="toc-text">组合逻辑电路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF%EF%BC%88%E7%8A%B6%E6%80%81%E7%94%B5%E8%B7%AF%EF%BC%89"><span class="toc-number">13.0.4.2.</span> <span class="toc-text">时序电路（状态电路）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">14.</span> <span class="toc-text">14. 时序电路（状态电路）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%AF%E5%8A%A0%E5%99%A8"><span class="toc-number">14.0.1.</span> <span class="toc-text">累加器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">14.0.2.</span> <span class="toc-text">寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8%E2%80%94%E2%80%94%E4%B8%8A%E5%8D%87%E6%B2%BF%E8%A7%A6%E5%8F%91%E5%9E%8B%EF%BC%88%E6%84%8F%E5%91%B3%E7%9D%80%E5%9C%A8Clock%E6%97%B6%E9%92%9F%E4%BB%8E0%E5%88%B01%E7%9A%84%E6%97%B6%E5%80%99%E8%A2%AB%E8%A7%A6%E5%8F%91%EF%BC%89"><span class="toc-number">14.0.2.1.</span> <span class="toc-text">触发器——上升沿触发型（意味着在Clock时钟从0到1的时候被触发）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E9%A1%BE%E2%80%94%E2%80%94%E6%89%80%E6%9C%89%E6%97%B6%E9%97%B4%E5%BB%B6%E8%BF%9F%EF%BC%8C%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%8C%E8%A7%A6%E5%8F%91%E5%99%A8%E7%9B%B8%E5%85%B3%E7%9A%84%E5%90%8D%E8%AF%8D"><span class="toc-number">14.0.3.</span> <span class="toc-text">回顾——所有时间延迟，寄存器，触发器相关的名词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BAFSM"><span class="toc-number">14.0.4.</span> <span class="toc-text">有限状态机FSM</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">15.</span> <span class="toc-text">15. 组合逻辑电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8-Data-Multiplexors"><span class="toc-number">15.0.1.</span> <span class="toc-text">数据多路复用器 Data Multiplexors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83-Arithmetic-and-Logic-Unit-ALU"><span class="toc-number">15.0.2.</span> <span class="toc-text">算术逻辑单元 Arithmetic and Logic Unit (ALU)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">16.</span> <span class="toc-text">16. 单核CPU设计-1 数据通路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF-Data-Path"><span class="toc-number">16.0.1.</span> <span class="toc-text">数据通路 Data Path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6-Control"><span class="toc-number">16.0.2.</span> <span class="toc-text">控制 Control</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%9A%84%E5%87%A0%E4%B8%AA%E6%AD%A5%E9%AA%A4"><span class="toc-number">16.0.3.</span> <span class="toc-text">执行汇编指令的几个步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add%E6%8C%87%E4%BB%A4%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="toc-number">16.0.4.</span> <span class="toc-text">add指令的数据通路设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sub%E6%8C%87%E4%BB%A4%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="toc-number">16.0.5.</span> <span class="toc-text">sub指令的数据通路设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#addi-%E7%AB%8B%E5%8D%B3%E6%95%B0%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF"><span class="toc-number">16.0.6.</span> <span class="toc-text">addi 立即数加法指令的数据通路</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">17.</span> <span class="toc-text">17. 单核CPU设计-2 数据通路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#load-word%E6%8C%87%E4%BB%A4%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF"><span class="toc-number">17.0.1.</span> <span class="toc-text">load word指令的数据通路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81store-word%E6%8C%87%E4%BB%A4"><span class="toc-number">17.0.2.</span> <span class="toc-text">支持store word指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E5%88%86%E6%94%AF%E6%8C%87%E4%BB%A4"><span class="toc-number">17.0.3.</span> <span class="toc-text">支持分支指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81JALR-Jump-and-Link-Register%E6%8C%87%E4%BB%A4%E2%80%94%E2%80%94I-Format"><span class="toc-number">17.0.4.</span> <span class="toc-text">支持JALR Jump and Link Register指令——I-Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81JAL-Jump-and-Link%E6%8C%87%E4%BB%A4%E2%80%94%E2%80%94J-Format"><span class="toc-number">17.0.5.</span> <span class="toc-text">支持JAL Jump and Link指令——J-Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81U-Format%E2%80%94%E2%80%94%E9%95%BF%E7%AB%8B%E5%8D%B3%E6%95%B0"><span class="toc-number">17.0.6.</span> <span class="toc-text">支持U-Format——长立即数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RISC-V%E5%8D%95%E6%A0%B8CPU%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E6%80%BB%E5%9B%BE"><span class="toc-number">17.0.7.</span> <span class="toc-text">RISC-V单核CPU数据通路总图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">18.</span> <span class="toc-text">18. 单核CPU设计-3 控制模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSR-%E2%80%94%E2%80%94Control-and-Status-Register"><span class="toc-number">18.0.1.</span> <span class="toc-text">CSR ——Control and Status Register</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%9A%84Timing"><span class="toc-number">18.0.2.</span> <span class="toc-text">指令的Timing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1"><span class="toc-number">18.0.3.</span> <span class="toc-text">控制逻辑设计</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">19.</span> <span class="toc-text">22. Caches-1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%89%8D%E7%BC%80"><span class="toc-number">19.0.1.</span> <span class="toc-text">二进制前缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache%E5%87%BA%E7%8E%B0%E7%9A%84%E5%8E%9F%E5%9B%A0%E2%80%94%E2%80%94CPU%E9%80%9F%E5%BA%A6%E5%92%8C%E8%AE%BF%E9%97%AE%E5%86%85%E5%AD%98%E7%9A%84%E9%80%9F%E5%BA%A6%E7%9A%84%E5%B7%AE%E8%B7%9D%E9%97%AE%E9%A2%98"><span class="toc-number">19.0.2.</span> <span class="toc-text">Cache出现的原因——CPU速度和访问内存的速度的差距问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">19.0.3.</span> <span class="toc-text">Cache是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%EF%BC%88%E5%AE%BD%E6%B3%9B%E7%9A%84%E5%86%85%E5%AD%98%EF%BC%89"><span class="toc-number">19.0.4.</span> <span class="toc-text">内存层次结构（宽泛的内存）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-number">19.0.5.</span> <span class="toc-text">Cache的设计原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%B1%80%E9%83%A8%E6%80%A7"><span class="toc-number">19.0.5.1.</span> <span class="toc-text">时间局部性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%B1%80%E9%83%A8%E6%80%A7"><span class="toc-number">19.0.5.2.</span> <span class="toc-text">空间局部性</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">20.</span> <span class="toc-text">23. Caches-2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84%E7%BC%93%E5%AD%98"><span class="toc-number">20.0.1.</span> <span class="toc-text">直接映射缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Block%E7%9A%84%E5%AE%BD%E5%BA%A6%E5%A4%A7%E4%BA%8E%E4%B8%80%E4%B8%AA%E5%AD%97%E8%8A%82%E6%97%B6"><span class="toc-number">20.0.1.1.</span> <span class="toc-text">Block的宽度大于一个字节时</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%86%85%E5%AD%98%E7%9A%84%E5%AE%9E%E9%99%85%E6%B5%81%E7%A8%8B"><span class="toc-number">20.0.2.</span> <span class="toc-text">访问内存的实际流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD"><span class="toc-number">20.0.3.</span> <span class="toc-text">Cache相关术语</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cache%E5%91%BD%E4%B8%AD"><span class="toc-number">20.0.3.1.</span> <span class="toc-text">cache命中</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E6%9C%AA%E5%91%BD%E4%B8%AD"><span class="toc-number">20.0.4.</span> <span class="toc-text">cache未命中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E6%9C%AA%E5%91%BD%E4%B8%AD%E4%B8%94%E5%9D%97%E6%9B%BF%E6%8D%A2"><span class="toc-number">20.0.5.</span> <span class="toc-text">cache未命中且块替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E5%91%BD%E4%B8%AD%E7%8E%87"><span class="toc-number">20.0.6.</span> <span class="toc-text">cache命中率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AA%E5%91%BD%E4%B8%AD%E6%83%A9%E7%BD%9A"><span class="toc-number">20.0.7.</span> <span class="toc-text">未命中惩罚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%B8%AD%E6%97%B6%E9%97%B4"><span class="toc-number">20.0.8.</span> <span class="toc-text">命中时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">20.0.9.</span> <span class="toc-text">$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E7%9A%84%E6%9C%89%E6%95%88%E4%BD%8D"><span class="toc-number">20.0.10.</span> <span class="toc-text">cache的有效位</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">21.</span> <span class="toc-text">24. Cache-3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AECache%E7%9A%84%E8%BF%87%E7%A8%8B%E7%A4%BA%E4%BE%8B%E2%80%94%E2%80%94%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-number">21.0.1.</span> <span class="toc-text">访问Cache的过程示例——读取数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE%E6%97%B6cache%E5%92%8C%E5%86%85%E5%AD%98%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-number">21.0.2.</span> <span class="toc-text">写入数据时cache和内存发生了什么</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Dirty-bit-%E8%84%8F%E4%BD%8D"><span class="toc-number">21.0.2.1.</span> <span class="toc-text">Dirty bit 脏位</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Block%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="toc-number">21.0.3.</span> <span class="toc-text">Block的大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E5%85%B3%E8%81%94%E7%BC%93%E5%AD%98"><span class="toc-number">21.0.4.</span> <span class="toc-text">完全关联缓存</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">22.</span> <span class="toc-text">25. Caches-4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E7%9B%B8%E8%81%94%E7%BC%93%E5%AD%98-Set-Associative-Caches"><span class="toc-number">22.0.1.</span> <span class="toc-text">组相联缓存 Set-Associative Caches</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E6%9B%BF%E6%8D%A2%E7%AD%96%E7%95%A5"><span class="toc-number">22.0.2.</span> <span class="toc-text">块替换策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E5%9D%87%E8%AE%BF%E9%97%AE%E6%97%B6%E9%97%B4"><span class="toc-number">22.0.3.</span> <span class="toc-text">平均访问时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98"><span class="toc-number">22.0.4.</span> <span class="toc-text">多级缓存</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/07/3D-Reconstruction/" title="3D-Reconstruction">3D-Reconstruction</a><time datetime="2024-12-06T16:00:00.000Z" title="发表于 2024-12-07 00:00:00">2024-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/19/Clouduo-Demo/" title="Clouduo作品集">Clouduo作品集</a><time datetime="2024-10-18T16:00:00.000Z" title="发表于 2024-10-19 00:00:00">2024-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/19/TA-Graphics/" title="技术美术百人计划-图形向笔记">技术美术百人计划-图形向笔记</a><time datetime="2024-10-18T16:00:00.000Z" title="发表于 2024-10-19 00:00:00">2024-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/19/CS61C/" title="CS61C-笔记">CS61C-笔记</a><time datetime="2024-09-18T16:00:00.000Z" title="发表于 2024-09-19 00:00:00">2024-09-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/19/MSC%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" title="MSC-GAMECLUB 游戏开发学习资源（持续更新...）">MSC-GAMECLUB 游戏开发学习资源（持续更新...）</a><time datetime="2023-10-18T16:00:00.000Z" title="发表于 2023-10-19 00:00:00">2023-10-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Clouduo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
